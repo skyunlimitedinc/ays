@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Project with Exclusions" pattern="file[acs]:*/&amp;&amp;!file[acs]:config//*&amp;&amp;!file[acs]:storage//*&amp;&amp;!file[acs]:vendor//*&amp;&amp;!file[acs]:.idea//*&amp;&amp;!file[acs]:assets-raw//*&amp;&amp;!file[acs]:public//*&amp;&amp;!file[acs]:*.lock" />
+</component>

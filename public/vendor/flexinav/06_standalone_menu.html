@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>  
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="css/flexinav.css" />
+    <link rel="stylesheet" href="css/scrollbars.css" />
+    <link rel="stylesheet" href="fonts/css/font-awesome.css">
+    
+    <title>FlexiNav - Flexible and Responsive Navigation</title>
+
+    <script src='js/jquery.js'></script>
+    <script src='js/flexinav_plugins.js'></script>
+    <script src='js/flexinav.js'></script>
+    <script>
+        $(document).ready(function($){
+            $('#flexinav1').flexiNav({
+                flexinav_effect: 'flexinav_hover', // Type of event to show the drop downs ('flexinav_hover' or 'flexinav_click')
+                flexinav_show_duration: 300, // Duration to fade in drop downs
+                flexinav_hide_duration: 200, // Duration to fade out drop downs
+                flexinav_show_delay: 200, // Delay before fading in/out drop downs
+                flexinav_trigger : false, // Button to toggle the menu bar (fixed version only)
+                flexinav_hide : false, // Hides the menu bar when the page loads (fixed version only)
+                flexinav_scrollbars: true, // Enables scrollbars within drop downs
+                flexinav_scrollbars_height: 500, // Height of drop downs that use scrollbars (unique value in pixels)
+                flexinav_responsive: true // Enables the responsive version of the menu
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+
+
+
+
+<div id="flexinav1" class="flexinav"><!-- BEGIN FLEXINAV -->
+
+
+
+    <div class="flexinav_wrapper"><!-- Flexinav Container -->
+
+
+
+        <ul class="flexinav_menu"><!-- Flexinav -->
+
+            
+
+            <li class="flexinav_collapse"><span><i class="fa fa-bars"></i>Navigation</span></li>
+
+
+            <li><span>Left Item 1</span>
+
+                <div class="flexinav_ddown flexinav_ddown_480">
+
+                    <div class="colrow">
+
+                        <div class="col12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque corporis quod deserunt eligendi nisi quidem! Facere, earum, suscipit voluptates omnis modi quos quia eius officia quam ab iste vitae asperiores autem reiciendis consequatur labore aliquid laborum. Eos, cumque, velit, magnam soluta hic fugit inventore cum ipsum aliquid non exercitationem.</p>
+                        </div>                            
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+            <li><span>Left Item 2</span>
+
+                <div class="flexinav_ddown flexinav_ddown_400">
+
+                    <div class="colrow">
+
+                        <div class="col12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum enim perspiciatis iusto tempora praesentium commodi minus molestias asperiores neque autem possimus maxime atque? Assumenda, voluptatum, itaque, sunt iure sapiente officiis deserunt neque aliquam.</p>
+                        </div>                            
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+        </ul><!-- Flexinav -->
+
+
+
+        <ul class="flexinav_menu flexinav_menu_right"><!-- Flexinav -->
+
+            
+
+            <li><span>Right Item 1</span>
+
+                <div class="flexinav_ddown flexinav_ddown_320 flexinav_ddown_right">
+
+                    <div class="colrow">
+
+                        <div class="col12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, ipsa ab illum natus earum eum officia dolor ipsam sed vel adipisci sapiente voluptas placeat consequuntur reiciendis aut cupiditate id fuga.</p>
+                        </div>                            
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+            <li><span>Right Item 2</span>
+
+                <div class="flexinav_ddown flexinav_ddown_240 flexinav_ddown_right">
+
+                    <div class="colrow">
+
+                        <div class="col12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt blanditiis saepe pariatur possimus aspernatur quis quas illum doloremque velit.</p>
+                        </div>                            
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+        </ul><!-- Flexinav -->
+
+
+
+    </div><!-- Flexinav Container -->
+
+
+
+</div><!-- END FLEXINAV -->
+
+
+
+
+</body>
+</html>

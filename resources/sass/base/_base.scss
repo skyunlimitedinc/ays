@@ -1,0 +1,135 @@
+// Overall --------------------------------------------------
+html {
+  font-size: 1.25rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.25rem;
+  } // media-breakpoint-up(sm)
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.3rem;
+  } // media-breakpoint-up(md)
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.3rem;
+  } // media-breakpoint-up(lg)
+} // html
+
+//noinspection CssNoGenericFontName,CssUnknownProperty
+body {
+  background: color(bg-abs) image(bg-main) no-repeat top center;
+  font-family: font(paragraph);
+  color: color(text);
+  -ms-word-break: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+} // body
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 900;
+} // h1, h2, h3, h4, h5
+
+// Coloring --------------------------------------------------
+// Color certain texts. (Mostly meant for use with `<span>`.)
+.is-accented {
+  color: color(text-white);
+  text-shadow: 0px 0px 5px color(text-black);
+} // .is-accented
+
+.bg-accent {
+  background-color: color(accent);
+} // .bg-accent
+
+// FontAwesome --------------------------------------------------
+.svg-inline--fa {
+  margin: 0 0.25em;
+} // .svg-inline--fa
+
+// Anchors --------------------------------------------------
+a {
+  color: color(link);
+  font-style: italic;
+
+  &:hover,
+  &:focus {
+    color: color(link-hover);
+  } // :hover, :focus
+  &:active {
+    color: color(link-active);
+  } // :active
+} // a
+
+// Footer --------------------------------------------------
+footer {
+  color: lighten(color(text), 30%);
+
+  a {
+    color: lighten(color(text), 60%);
+    text-decoration: underline;
+
+    &:hover {
+      color: lighten(color(text), 15%);
+    } // :hover
+  } // a
+} // footer
+
+// FlexiNav overrides --------------------------------------------------
+.container {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+} // .container
+
+// Base text styling --------------------------------------------------
+.aside {
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: normal;
+} // .aside
+
+.small,
+.sub,
+.sup {
+  font-size: 0.6em;
+} // .small, .sub, .sup
+.sub {
+  vertical-align: sub;
+} // .sub
+.sup {
+  //vertical-align: super;
+  position: relative;
+  bottom: 1ex;
+} // .sup
+
+.text-stroke-black {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+} // .text-stroke-black
+
+// Icons --------------------------------------------------
+.icon {
+  img {
+    width: 1em;
+    height: 1em;
+
+    &.icon-print {
+      display: none;
+    } // &.icon-print
+
+    @media print {
+      &.icon-print {
+        display: inline-block;
+      } // &.icon-print
+      &.icon-screen {
+        display: none;
+      } // &.icon-screen
+    } // @media print
+  } // img
+} // .icon

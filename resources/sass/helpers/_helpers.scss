@@ -1,0 +1,77 @@
+// Helper functions to retrieve Sass map variables.
+
+@function color($key) {
+  @if map_has_key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function image($key) {
+  @if map_has_key($images, $key) {
+    @return map_get($images, $key);
+  }
+  @warn "Unknown `#{$key}` in $images.";
+  @return null;
+}
+
+@function font($key) {
+  @if map_has_key($fonts, $key) {
+    @return map_get($fonts, $key);
+  }
+  @warn "Unknown `#{$key}` in $fonts.";
+  @return null;
+}
+
+@function grad($key) {
+  @if map_has_key($gradients, $key) {
+    @return map_get($gradients, $key);
+  }
+  @warn "Unknown `#{$key}` in $gradients.";
+  @return null;
+}
+
+// Buttons --------------------------------------------------
+@mixin category-button($gradient, $color1, $color2) {
+  background: $color1 $gradient;
+  color: darken($color2, 30%);
+  text-shadow: 0 -1px 0 darken($color2, 50%), 0 1px 0 lighten($color2, 10%);
+  box-shadow: 0 2px 0 darken($color1, 30%), 0 0 5px rgba(color(bg-main), 0.25);
+
+  &:hover {
+    color: darken($color2, 10%);
+  } //:hover
+} // category-button
+
+@mixin method-button($color: color(accent), $grad: grad(accent)) {
+  background: darken($color, 30%) $grad;
+  border: 2px solid darken($color, 10%);
+  box-shadow: 0 5px 0 darken($color, 30%);
+  color: darken($color, 40%);
+  text-shadow: 0 1px 0 darken($color, 50%), 0 -1px 0 darken($color, 30%);
+} // method-button
+
+@mixin method-button-selected(
+  $color: color(accent),
+  $grad: grad(accent),
+  $offset: 5px
+) {
+  background: darken($color, 10%) $grad;
+  border: 2px solid lighten($color, 10%);
+  color: lighten($color, 5%);
+  text-shadow: 0 1px 0 darken($color, 10%), 0 -1px 0 darken($color, 20%);
+  box-shadow: 0 $offset 0 darken($color, 20%);
+} // method-button-selected
+
+// Text --------------------------------------------------
+@mixin accented() {
+  color: color(accent);
+}
+
+@mixin inlay-text(
+  $lightColor: lighten(color(menu-stop1), 10%),
+  $darkColor: darken(color(menu-stop1), 20%)
+) {
+  text-shadow: 0 1px 0 $lightColor, 0 -1px 0 $darkColor;
+}

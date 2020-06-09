@@ -1,0 +1,3 @@
+[submodule "public/vendor/jquery-infinite-rotator"]
+	path = public/vendor/jquery-infinite-rotator
+	url = https://github.com/SturmB/jquery-infinite-rotator.git
