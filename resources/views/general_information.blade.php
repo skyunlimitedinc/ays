@@ -15,9 +15,9 @@
 
                 <p>We request camera ready art and will resize it appropriately, or will follow your instructions, if given. We have a large selection of clipart. If what you need is not available, we have a cutting-edge art department and can assist you in creating custom art from photographs, business cards, brochures, etc. If you need our extra design assistance creating artwork, it is available at a reasonable charge. Artwork isn&rsquo;t limited to logos only. Sketch out a diagram of how you want the item to look. Remember that type can be placed on an arc, at angles, placed on either side of clip art, italicized, etc., to create a well balanced design. Use additional paper to sketch your designs and layouts. We reserve the right to determine what constitutes camera-ready vector art or high-resolution digital art. Digital proofs are sent via email for all new orders and reorders.</p>
 
-                <p>Call our customer service representatives if you have questions concerning art at {{ setting('acs.phone_cs') }}. We&rsquo;re happy to help! You can also email us your artwork to the address below.</p>
+                <p>Call our customer service representatives if you have questions concerning art at {{ setting('ays.phone_cs') }}. We&rsquo;re happy to help! You can also email us your artwork to the address below.</p>
 
-                <p>Art email: <a href="mailto:{{ setting('acs.email_cs') }}">{{ setting('acs.email_cs') }}</a></p>
+                <p>Art email: <a href="mailto:{{ setting('ays.email_cs') }}">{{ setting('ays.email_cs') }}</a></p>
 
                 <h4>Acceptable Digital Art:</h4>
                 <ol>
@@ -25,7 +25,7 @@
                     <li>All vector art containing fonts MUST BE CONVERTED TO CURVES OR OUTLINES.</li>
                     <li>We accept monochrome (1 color-black) bitmap image files such as: .tif, .bmp, and .jpg. They must be high-resolution (600ppi or greater) and BLACK ONLY.</li>
                 </ol>
-                <p>*Emailed artwork can be sent to: <a href="mailto:{{ setting('acs.email_cs') }}">{{ setting('acs.email_cs') }}</a>. Please reference all pertinent information: company name, phone &amp; fax numbers, and PO#. Also please name your artwork by PO# to help us match files.</p>
+                <p>*Emailed artwork can be sent to: <a href="mailto:{{ setting('ays.email_cs') }}">{{ setting('ays.email_cs') }}</a>. Please reference all pertinent information: company name, phone &amp; fax numbers, and PO#. Also please name your artwork by PO# to help us match files.</p>
 
                 <h4>Unacceptable Digital Art:</h4>
                 <ol>
@@ -121,7 +121,7 @@
 
                 <h3 id="section-rush">Rush Service:</h3>
 
-                <p>Rush service is available at no extra charge and based on production &amp; inventory availability. However, your order will be required to ship via an AIR METHOD. If this is not acceptable, your order will be given standard production time. All rush orders must ship overnight to ensure you meet your deadline. Call our customer service representatives at {{ setting('acs.phone_cs') }} for availability of rush service. Our hours are 8:30 a.m. until 5:00 p.m. EST Monday through Friday. Let us help you!</p>
+                <p>Rush service is available at no extra charge and based on production &amp; inventory availability. However, your order will be required to ship via an AIR METHOD. If this is not acceptable, your order will be given standard production time. All rush orders must ship overnight to ensure you meet your deadline. Call our customer service representatives at {{ setting('ays.phone_cs') }} for availability of rush service. Our hours are 8:30 a.m. until 5:00 p.m. EST Monday through Friday. Let us help you!</p>
 
 
                 <h3>Shipping:</h3>
@@ -203,7 +203,7 @@
 
                 <h3>Privacy Policy:</h3>
 
-                <p>We know that your privacy on the Internet is very important to you. As a result, we have prepared this Privacy Policy to let you know there is no information-collecting cookies on {{ setting('acs.site_title') }}&rsquo;s web site, reassuring you of your privacy while browsing our site. You have our word.</p>
+                <p>We know that your privacy on the Internet is very important to you. As a result, we have prepared this Privacy Policy to let you know there is no information-collecting cookies on {{ setting('ays.site_title') }}&rsquo;s web site, reassuring you of your privacy while browsing our site. You have our word.</p>
 
 
                 <p class="font-weight-bold">It is understood that by submitting an order to the factory, the customer agrees to all of the factory&rsquo;s terms and conditions, regardless of what is on the customer&rsquo;s purchase order.</p>

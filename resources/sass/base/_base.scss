@@ -39,8 +39,7 @@ h5 {
 // Coloring --------------------------------------------------
 // Color certain texts. (Mostly meant for use with `<span>`.)
 .is-accented {
-  color: color(text-white);
-  text-shadow: 0px 0px 5px color(text-black);
+  color: color(accent);
 } // .is-accented
 
 .bg-accent {
@@ -68,14 +67,14 @@ a {
 
 // Footer --------------------------------------------------
 footer {
-  color: lighten(color(text), 30%);
+  color: color(text);
 
   a {
-    color: lighten(color(text), 60%);
+    color: color(accent);
     text-decoration: underline;
 
     &:hover {
-      color: lighten(color(text), 15%);
+      color: lighten(color(accent), 15%);
     } // :hover
   } // a
 } // footer

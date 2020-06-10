@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="csrf-token" content={{ csrf_token() }}>
 
-<title>{{ setting('site.title') }}</title>
+<title>{{ setting('ays.site_title') }}</title>
 
 {{-- FontAwesome --}}
 <script src="https://kit.fontawesome.com/8055eacedd.js" crossorigin="anonymous"></script>
@@ -36,8 +36,8 @@
 
 <meta name="msapplication-TileColor" content="#591315">
 <meta name="msapplication-TileImage" content="{{ asset('storage/favicons/favicon-144.png') }}">
-<meta name="application-name" content="{{ setting('acs.site_title') }}">
-<meta name="msapplication-tooltip" content="{{ setting('acs.site_title') }}">
+<meta name="application-name" content="{{ setting('ays.site_title') }}">
+<meta name="msapplication-tooltip" content="{{ setting('ays.site_title') }}">
 <meta name="msapplication-config" content="{{ asset('storage/favicons/ieconfig.xml') }}">
 <!-- End Favicons -->
 

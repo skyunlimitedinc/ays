@@ -6,7 +6,7 @@
 // Header --------------------------------------------------
 header a {
   display: none;
-  max-width: 250px;
+  max-width: 400px;
 
   @include media-breakpoint-up(sm) {
     display: block;
@@ -113,6 +113,7 @@ header a {
 #splash {
   //background-image: url('/storage/images/hero-01.jpg');
   overflow: hidden;
+  border: 1px solid color(bg-main);
 
   img {
     height: auto;
@@ -121,24 +122,24 @@ header a {
   //noinspection CssNoGenericFontName
   h1 {
     position: absolute;
-    left: 5%;
-    top: 10%;
+    left: 50%;
+    top: 5%;
     font-family: font(script);
-    font-size: 1.5em;
-    color: color(bg-main);
+    font-size: 2em;
+    color: #ffffff;
     text-indent: 1em;
-    text-shadow: 2px 2px 14px rgba(color(bg-abs), 0.5);
+    text-shadow: 2px 2px 14px rgba(color(black-abs), 0.5);
 
     @include media-breakpoint-up(sm) {
-      font-size: 2.5em;
+      font-size: 3em;
     } // media-breakpoint-up(sm)
 
     @include media-breakpoint-up(lg) {
-      font-size: 3em;
+      font-size: 3.5em;
     } // media-breakpoint-up(lg)
 
     @include media-breakpoint-up(xl) {
-      font-size: 3.5em;
+      font-size: 4em;
     } // media-breakpoint-up(xl)
   } // h1
 } // #splash
@@ -146,6 +147,7 @@ header a {
 // Main Content --------------------------------------------------
 #main-content {
   background: color(bg-lighter) grad(menu);
+  border: 1px solid color(bg-main);
 
   /*
   @include media-breakpoint-down(sm) {
@@ -337,7 +339,7 @@ header a {
 
 // Product Page --------------------------------------------------
 #product-content {
-  background: color(bg-abs);
+  background: color(black-abs);
   color: color(text-alt);
   border: 2px solid color(bg-main);
 
@@ -438,7 +440,7 @@ header a {
 
     //noinspection CssNoGenericFontName
     h2 {
-      color: color(text-white);
+      color: color(accent);
       font-family: font(headings);
       text-transform: uppercase;
       font-size: 1.5em;
@@ -464,7 +466,7 @@ header a {
 
   dt {
     float: left;
-    color: color(bg-lightest);
+    color: color(accent);
     margin-right: 0.5em;
   } // dt
 
@@ -496,11 +498,11 @@ header a {
 } // .item-info
 
 .item-info__num-thumb-desc {
-  border-bottom: 2px groove color(accent-darker);
+  border-bottom: 2px groove darken(color(accent), 20%);
 
   @include media-breakpoint-up(sm) {
     border-bottom: 0;
-    border-right: 2px groove color(accent-darker);
+    border-right: 2px groove darken(color(accent), 20%);
   } // @include media-breakpoint-up(sm)
 } // .item-info__num-thumb-desc
 
@@ -585,7 +587,7 @@ header a {
   } // media-breakpoint-up(lg)
 
   &:hover {
-    background: rgba(color(bg-abs), 0.35);
+    background: rgba(color(black-abs), 0.35);
 
     .thumbnail__ribbon-area {
       display: block;
@@ -628,12 +630,12 @@ header a {
 
 // Price Table
 .item-info__price-table {
-  border: 2px solid color(accent-dark);
+  border: 2px solid darken(color(accent), 10%);
   //table-layout: fixed; // Removed as it makes the Quantity column far too narrow on some tables.
 } // .item-info__price-table
 
 %border-color-shared {
-  border-color: color(accent-dark) !important;
+  border-color: darken(color(accent), 10%) !important;
 } // %border-color-shared
 
 //noinspection CssNoGenericFontName
@@ -714,7 +716,7 @@ header a {
   } // :active
 
   &.active {
-    background: color(bg-abs-lighter);
+    background: color(black-abs-lighter);
     color: color(text-alt);
     border-color: color(bg-main);
   } // &.active
@@ -722,7 +724,7 @@ header a {
 
 .swatches__content {
   padding: 1em;
-  background: color(bg-abs-lighter) grad(swatch-bg);
+  background: color(black-abs-lighter) grad(swatch-bg);
 } // .swatches__content
 
 .swatches__header {
@@ -768,7 +770,8 @@ header a {
 #general-content {
 
   background: color(bg-lighter) grad(menu);
-  color: color(bg-abs);
+  border: 1px solid color(bg-main);
+  color: color(black-abs);
 
   h1,
   h2,

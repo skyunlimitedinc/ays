@@ -3,7 +3,7 @@
 
         <nav>
 
-            <div id="flexinav1" class="flexinav flexinav_acs">
+            <div id="flexinav1" class="flexinav flexinav_ocean">
                 <div class="flexinav_wrapper">
                     {{--<ul class="navbar-nav nav-fill w-100">--}}
                     <ul class="flexinav_menu">
@@ -22,7 +22,7 @@
                         <li><span>Information</span>
                             <div class="flexinav_ddown flexinav_ddown_fly_out flexinav_ddown_240">
                                 <ul class="dropdown_flyout">
-                                    <li><a href="{{ asset('storage/orderform.pdf') }}" target="_blank" title="Order Form">Order Form</a></li>
+                                    <li><a href="{{ asset('storage/ays_orderform.pdf') }}" target="_blank" title="Order Form">Order Form</a></li>
                                     <li><a href="{{ route('typefaces') }}" target="_self" title="Fonts">Typefaces</a></li>
                                     <li><a href="{{ route('generalInfo') }}" target="_self" title="General Information">General Info</a></li>
                                     <li><a href="{{ route('about') }}" target="_self" title="About Us">About Us</a></li>

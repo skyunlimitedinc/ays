@@ -21,7 +21,7 @@ mix
   .js("resources/js/app.js", "public/js")
   .extract(["retinajs"])
   .sass("resources/sass/app.scss", "public/css")
-  .browserSync("acs.test");
+  .browserSync("ays.test");
 
 if (!mix.inProduction()) {
   mix

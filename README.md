@@ -1,2 +1,2 @@
-# acs
-American Cabin Supply web site created with Laravel.
+# ays
+American Yacht Supply web site created with Laravel.

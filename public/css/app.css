@@ -10754,7 +10754,7 @@ html {
 }
 
 body {
-  background: #00122f url("/storage/images/background-planes-2800x1600.jpg") no-repeat top center;
+  background: #ffffff url("/storage/images/background-yachts4-2800x1600.jpg") no-repeat top center;
   font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #444444;
   -ms-word-break: break-word;
@@ -10773,12 +10773,11 @@ h5 {
 }
 
 .is-accented {
-  color: #ffffff;
-  text-shadow: 0px 0px 5px #000000;
+  color: #1584c9;
 }
 
 .bg-accent {
-  background-color: #881a1d;
+  background-color: #1584c9;
 }
 
 .svg-inline--fa {
@@ -10800,16 +10799,16 @@ a:active {
 }
 
 footer {
-  color: #919191;
+  color: #444444;
 }
 
 footer a {
-  color: #dddddd;
+  color: #1584c9;
   text-decoration: underline;
 }
 
 footer a:hover {
-  color: #6a6a6a;
+  color: #40a9eb;
 }
 
 .container {
@@ -10868,7 +10867,7 @@ footer a:hover {
 
 header a {
   display: none;
-  max-width: 250px;
+  max-width: 400px;
 }
 
 @media (min-width: 576px) {
@@ -10903,7 +10902,7 @@ header a {
 
 .flexinav,
 .flexinav_collapse {
-  border: 1px solid #881a1d;
+  border: 1px solid #1584c9;
   border-radius: 6px;
 }
 
@@ -10913,17 +10912,17 @@ header a {
 .flexinav_acs .flexinav_wrapper .flexinav_menu > li,
 .flexinav_acs .flexinav_wrapper .flexinav_menu > li.noactive,
 .flexinav_acs + .flexinav_btn {
-  background: #5d1214;
+  background: #10669b;
 }
 
 .flexinav_acs .flexinav_ddown a,
 .flexinav_acs .dropdown_flyout li span {
-  color: #881a1d;
+  color: #1584c9;
 }
 
 .flexinav_acs .flexinav_ddown a:hover,
 .flexinav_acs .dropdown_flyout li span:hover {
-  color: #b32226;
+  color: #289fe9;
 }
 
 .flexinav_acs .flexinav_wrapper .flexinav_menu > li.flexinav_collapse_active,
@@ -10933,7 +10932,7 @@ header a {
 
 .flexinav_acs .flexinav_wrapper .flexinav_menu > li.flexinav_collapse_noactive,
 .flexinav_acs .flexinav_wrapper .flexinav_menu > li.flexinav_collapse_noactive:hover {
-  background: #881a1d;
+  background: #1584c9;
 }
 
 .flexinav .dropdown_parent span:after,
@@ -10968,6 +10967,7 @@ header a {
 
 #splash {
   overflow: hidden;
+  border: 1px solid #333333;
 }
 
 #splash img {
@@ -10976,35 +10976,36 @@ header a {
 
 #splash h1 {
   position: absolute;
-  left: 5%;
-  top: 10%;
+  left: 50%;
+  top: 5%;
   font-family: spumante, script;
-  font-size: 1.5em;
-  color: #002662;
+  font-size: 2em;
+  color: #ffffff;
   text-indent: 1em;
-  text-shadow: 2px 2px 14px rgba(0, 18, 47, 0.5);
+  text-shadow: 2px 2px 14px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 576px) {
-  #splash h1 {
-    font-size: 2.5em;
-  }
-}
-
-@media (min-width: 992px) {
   #splash h1 {
     font-size: 3em;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   #splash h1 {
     font-size: 3.5em;
   }
 }
 
+@media (min-width: 1200px) {
+  #splash h1 {
+    font-size: 4em;
+  }
+}
+
 #main-content {
-  background: #004ec8 linear-gradient(#dbdada, #a9a6a6);
+  background: gray linear-gradient(to bottom, #dbdada, #a9a6a6);
+  border: 1px solid #333333;
   /*
   @include media-breakpoint-down(sm) {
     display: none;
@@ -11014,7 +11015,7 @@ header a {
 
 #welcome-aboard-special .promo-photo {
   border: 1px solid #444444;
-  box-shadow: 0 5px 10px rgba(0, 18, 47, 0.15);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.15);
   border-radius: 5px;
   margin-bottom: 0.5em;
 }
@@ -11022,7 +11023,7 @@ header a {
 .article h2 {
   padding-top: 0.25em;
   border-top: 3px solid #444444;
-  text-shadow: 0 -1px 0 rgba(51, 51, 51, 0.5), 0 1px 0 rgba(255, 255, 255, 0.8);
+  text-shadow: 0 -1px 0 black, 0 1px 0 #ffffff;
 }
 
 .was-item {
@@ -11091,7 +11092,7 @@ header a {
   background: #f04d3f linear-gradient(to bottom, #f04d3f, #ea2312);
   color: #5c0e07;
   text-shadow: 0 -1px 0 black, 0 1px 0 #f04d3f;
-  box-shadow: 0 2px 0 #8b150b, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 #8b150b, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#napkins:hover {
@@ -11099,10 +11100,10 @@ header a {
 }
 
 .product-cat#coasters {
-  background: #f5821f linear-gradient(#f5821f, #f0750b);
+  background: #f5821f linear-gradient(to bottom, #f5821f, #f0750b);
   color: #5d2d04;
   text-shadow: 0 -1px 0 black, 0 1px 0 #f69037;
-  box-shadow: 0 2px 0 #763905, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 #763905, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#coasters:hover {
@@ -11110,10 +11111,10 @@ header a {
 }
 
 .product-cat#stirpiks {
-  background: #ffd64f linear-gradient(#ffd64f, #ffd036);
+  background: #ffd64f linear-gradient(to bottom, #ffd64f, #ffd036);
   color: #9c7700;
   text-shadow: 0 -1px 0 #362900, 0 1px 0 #ffdc69;
-  box-shadow: 0 2px 0 #b58b00, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 #b58b00, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#stirpiks:hover {
@@ -11121,10 +11122,10 @@ header a {
 }
 
 .product-cat#plates {
-  background: #5ba5a6 linear-gradient(#5ba5a6, #519596);
+  background: #5ba5a6 linear-gradient(to bottom, #5ba5a6, #519596);
   color: #1c3333;
   text-shadow: 0 -1px 0 black, 0 1px 0 #6caeaf;
-  box-shadow: 0 2px 0 #254343, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 #254343, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#plates:hover {
@@ -11132,10 +11133,10 @@ header a {
 }
 
 .product-cat#cups {
-  background: #135d83 linear-gradient(#135d83, #104d6d);
+  background: #135d83 linear-gradient(to bottom, #135d83, #104d6d);
   color: black;
   text-shadow: 0 -1px 0 black, 0 1px 0 #166d99;
-  box-shadow: 0 2px 0 black, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 black, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#cups:hover {
@@ -11143,10 +11144,10 @@ header a {
 }
 
 .product-cat#utensils {
-  background: #7f5785 linear-gradient(#7f5785, #704d76);
+  background: #7f5785 linear-gradient(to bottom, #7f5785, #704d76);
   color: #181019;
   text-shadow: 0 -1px 0 black, 0 1px 0 #8e6194;
-  box-shadow: 0 2px 0 #271a29, 0 0 5px rgba(0, 38, 98, 0.25);
+  box-shadow: 0 2px 0 #271a29, 0 0 5px rgba(51, 51, 51, 0.25);
 }
 
 .product-cat#utensils:hover {
@@ -11154,8 +11155,8 @@ header a {
 }
 
 #sidebar {
-  background: #004dc8 linear-gradient(to bottom, #002662, #001c49);
-  color: rgba(255, 255, 255, 0.8);
+  background: white linear-gradient(to bottom, #4d4d4d, #1a1a1a);
+  color: #c4c4c4;
 }
 
 #sidebar a {
@@ -11174,7 +11175,7 @@ header a {
 }
 
 .feature {
-  border: 4px double rgba(255, 255, 255, 0.8);
+  border: 4px double #c4c4c4;
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
@@ -11188,7 +11189,7 @@ header a {
 .feature h4 {
   font-family: proxima-nova-extra-condensed, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: bold;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 3px solid #c4c4c4;
 }
 
 .feature p,
@@ -11208,14 +11209,14 @@ header a {
 }
 
 #product-content {
-  background: #00122f;
-  color: rgba(255, 255, 255, 0.8);
-  border: 2px solid #002662;
+  background: #000000;
+  color: #c4c4c4;
+  border: 2px solid #333333;
 }
 
 #product-content #title .method-button {
   display: inline-block;
-  background: #080102 linear-gradient(to bottom, #5d1214, #320a0b);
+  background: #07293e linear-gradient(to bottom, #0b476d, #07293e);
   border-radius: 1em;
   max-width: 500px;
   margin: 0.5em;
@@ -11328,11 +11329,11 @@ header a {
 
 #fo-column #features-options {
   padding: 1em;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid #c4c4c4;
 }
 
 #fo-column #features-options h2 {
-  color: #ffffff;
+  color: #1584c9;
   font-family: proxima-nova-extra-condensed, Helvetica Neue, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 1.5em;
@@ -11365,7 +11366,7 @@ header a {
 
 #text-notes dt {
   float: left;
-  color: #2f80ff;
+  color: #1584c9;
   margin-right: 0.5em;
 }
 
@@ -11376,18 +11377,18 @@ header a {
 }
 
 .item-info {
-  background: #881a1d linear-gradient(to bottom, #5d1214, #320a0b);
+  background: #1584c9 linear-gradient(to bottom, #0b476d, #07293e);
   box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .item-info__num-thumb-desc {
-  border-bottom: 2px groove #320a0b;
+  border-bottom: 2px groove #0b476d;
 }
 
 @media (min-width: 576px) {
   .item-info__num-thumb-desc {
     border-bottom: 0;
-    border-right: 2px groove #320a0b;
+    border-right: 2px groove #0b476d;
   }
 }
 
@@ -11417,7 +11418,7 @@ header a {
 
 .thumbnail__ribbon {
   font: bold 15px Sans-Serif;
-  color: black;
+  color: #020b10;
   text-align: center;
   text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
   text-transform: uppercase;
@@ -11430,7 +11431,7 @@ header a {
   right: -8px;
   top: 20px;
   width: 120px;
-  background: #881a1d linear-gradient(to bottom, #731618, #5d1214);
+  background: #1584c9 linear-gradient(to bottom, #10669b, #0b476d);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   float: right;
 }
@@ -11438,7 +11439,7 @@ header a {
 .thumbnail__ribbon:before,
 .thumbnail__ribbon:after {
   content: "";
-  border-top: 2px solid #080102;
+  border-top: 2px solid #07293e;
   border-left: 2px solid transparent;
   border-right: 2px solid transparent;
   position: absolute;
@@ -11468,7 +11469,7 @@ header a {
 }
 
 .thumbnail__overlay--rollover:hover {
-  background: rgba(0, 18, 47, 0.35);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .thumbnail__overlay--rollover:hover .thumbnail__ribbon-area {
@@ -11505,7 +11506,7 @@ header a {
    * If anything went wrong trying to separate the file from its
    * extension, set a background value without doing anything to it.
    */
-  border: 3px solid #00122f;
+  border: 3px solid #ffffff;
   position: relative;
   display: inline-block;
   width: 200px;
@@ -11557,12 +11558,12 @@ header a {
 }
 
 .item-info__price-table {
-  border: 2px solid #5d1214;
+  border: 2px solid #10669b;
 }
 
 .price-table__td,
 .price-table__th {
-  border-color: #5d1214 !important;
+  border-color: #10669b !important;
 }
 
 .price-table__th {
@@ -11614,13 +11615,13 @@ header a {
 }
 
 #swatch-tabs {
-  border-bottom-color: #002662;
+  border-bottom-color: #333333;
 }
 
 .nav-tabs .swatches__tab__link {
   font-weight: bold;
   font-style: normal;
-  border-color: #002662;
+  border-color: #333333;
   color: #2c679b;
   font-size: 0.75rem;
 }
@@ -11634,25 +11635,25 @@ header a {
 .nav-tabs .swatches__tab__link:hover,
 .nav-tabs .swatches__tab__link:focus {
   color: #5c9ad1;
-  border-color: #004ec8;
+  border-color: gray;
   border-bottom-color: transparent;
 }
 
 .nav-tabs .swatches__tab__link:active {
   color: #accbe7;
-  border-color: #2f80ff;
+  border-color: #cccccc;
   border-bottom-color: transparent;
 }
 
 .nav-tabs .swatches__tab__link.active {
-  background: #002662;
-  color: rgba(255, 255, 255, 0.8);
-  border-color: #002662;
+  background: #333333;
+  color: #c4c4c4;
+  border-color: #333333;
 }
 
 .swatches__content {
   padding: 1em;
-  background: #002662 linear-gradient(to bottom, #002662, #001c49);
+  background: #333333 linear-gradient(to bottom, #333333, #1a1a1a);
 }
 
 .swatches__header {
@@ -11701,8 +11702,9 @@ header a {
 }
 
 #general-content {
-  background: #004ec8 linear-gradient(#dbdada, #a9a6a6);
-  color: #00122f;
+  background: gray linear-gradient(to bottom, #dbdada, #a9a6a6);
+  border: 1px solid #333333;
+  color: #000000;
 }
 
 #general-content h1,
@@ -11711,7 +11713,7 @@ header a {
 #general-content h4,
 #general-content h5,
 #general-content h6 {
-  color: #881a1d;
+  color: #1584c9;
   text-shadow: 0 1px 0 #f4f4f4, 0 -1px 0 #a9a6a6;
 }
 
@@ -11720,12 +11722,12 @@ header a {
 }
 
 .paragraph__heading {
-  color: #881a1d;
+  color: #1584c9;
   font-weight: 900;
 }
 
 .clipart__subtitle {
-  background-color: #881a1d;
+  background-color: #1584c9;
   color: #dbdada !important;
   text-shadow: none !important;
   border-radius: 100em;
@@ -11742,7 +11744,7 @@ header a {
 }
 
 .typefaces__name {
-  border-bottom: 1px solid #881a1d;
+  border-bottom: 1px solid #1584c9;
 }
 
 .svg {
@@ -11751,7 +11753,7 @@ header a {
 }
 
 .general-info h3 {
-  border-bottom: 2px solid #881a1d;
+  border-bottom: 2px solid #1584c9;
   margin-top: 1.2em;
 }
 

@@ -6,9 +6,9 @@
     <div class="row">
         <div class="col">
             <div class="jumbotron p-0" id="splash">
-                <h1>Your Plane<br>
+                <h1>Your Yacht<br>
                     Our Product</h1>
-                <img src="{{ asset('storage/images/hero-02.jpg') }}" data-rjs="3" alt="Airplane soaring" class="w-100">
+                <img src="{{ asset('storage/images/hero-01.jpg') }}" data-rjs="3" alt="Speedboat" class="w-100">
             </div>
         </div> {{--col--}}
     </div> {{--row--}}
@@ -120,43 +120,36 @@
                 <div class="feature">
                     <h4>Personalization is the Key</h4>
                     <p>
-                        As a professional pilot, you know that galley supplies add that &ldquo;Over the Top&rdquo; touch to your flight operations. Whether it is owner-flown or a company plane, your aircraft reflects the image of you and your company. Now it's time to make sure you personalize it, with custom imprinted Cups, Napkins, Plates, &amp; Coasters.<br>
+                        As a professional mariner, you know that galley supplies add that &ldquo;Over the Top&rdquo; touch to your sailing operations. Whether it is owner-driven or a company ship, your yacht reflects the image of you and your company. Now it's time to make sure you personalize it, with custom imprinted Cups, Napkins, Plates, &amp; Coasters.<br>
                         <br>
                         Your personalized Drinkware is as easy as:</p>
                     <ol>
-                        <li>Pick your aircraft from our vast clipart library.</li>
-                        <li>Provide text and/or &ldquo;N&rdquo; number with chosen font.</li>
-                        <li>Fill out our <a href="{{ asset('storage/acs_orderform.pdf') }}" title="Order Form" target="_blank">order form<i class="fas fa-download ml-1" aria-hidden="true"></i></a>.
+                        <li>Pick your yacht from our vast clipart library.</li>
+                        <li>Provide text and/or ship name with chosen font.</li>
+                        <li>Fill out our <a href="{{ asset('storage/ays_orderform.pdf') }}" title="Order Form" target="_blank">order form<i class="fas fa-download ml-1" aria-hidden="true"></i></a>.
                         </li>
                         <li>Approve your proof provided to you within 1 business day.</li>
                     </ol>
                 </div> {{--feature--}}
 
                 <div class="feature">
-                    <h4>A Pilot's Guide to Custom Imprinted Drinkware</h4>
+                    <h4>A Captain's Guide to Custom Imprinted Drinkware</h4>
                     <p>
-                        As a professional pilot or business owner, have you ever tried to track down galley supplies for your airplane? You see them everywhere but no one seems to know where to get them, and when you find a source, it is 2&ndash;3 weeks before your product ships. This company represents the classic &ldquo;saw a need and filled it&rdquo; story. <a href="{{ route('about') }}" title="About Us" target="_self">More on our story&hellip;</a>
+                        As a professional mariner or business owner, have you ever tried to track down galley supplies for your yacht? You see them everywhere but no one seems to know where to get them, and when you find a source, it is 2&ndash;3 weeks before your product ships. This company represents the classic &ldquo;saw a need and filled it&rdquo; story. <a href="{{ route('about') }}" title="About Us" target="_self">More on our story&hellip;</a>
                     </p>
                 </div> {{--feature--}}
 
                 <div class="feature">
-                    <h4>Downloadable 2020 Catalog</h4>
-                    <a href="{{ asset
-                    ('storage/American_Cabin_Supply_Catalog_2020_OPT.pdf')
-                    }}" target="_blank">
-                        <img src="{{ asset('storage/images/catalog-cover-front.jpg') }}" data-rjs="3" alt="Downloadable Catalog" id="cat-cover">
+                    <h4>Downloadable 2013 Catalog</h4>
+                    <a href="{{ asset('storage/American_Yacht_Supply_Catalog_2013_OPT.pdf') }}" target="_blank">
+                        <img src="{{ asset('storage/images/ays_catalog_2013_cover_front.jpg') }}" data-rjs="3" alt="Downloadable Catalog" id="cat-cover">
                     </a>
                     <p>
-                        Why wait for the mail? Get our digital catalog
-                        instantly and be eco-friendly. Browse through our
-                        many products to see which ones are right for you. If
-                        you can’t decide, call customer service and ask for a
-                        free random sample. We will gladly send you the actual
-                        item to see if it fits your cup holders as well as to see if you like the product.<br>
+                        Why wait for the mail? Get our digital catalog instantly and be eco-friendly. Browse through our many products to see which ones are right for you. If you can’t decide, call customer service and ask for a free random sample. We will gladly send you the actual item to see if it fits your cup holders as well as to see if you like the product.<br>
                         <br>
-                        Download the catalog to refer to later on your laptop. 15 pages of top of the line customizable drinkware items waiting for your planes picture and &ldquo;N&rdquo; numbers.<br>
+                        Download the catalog to refer to later on your laptop. 16 pages of top-of-the-line customizable drinkware items waiting for your yacht's picture and name.<br>
                         <br>
-                        Created for pilots, by pilots. Happy Flying!
+                        Created for captains, by captains. Happy Sailing!
                     </p>
                 </div> {{--feature--}}
 
