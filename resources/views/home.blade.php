@@ -139,7 +139,7 @@
                     </p>
                 </div> {{--feature--}}
 
-                <div class="feature">
+                {{--<div class="feature">
                     <h4>Downloadable 2013 Catalog</h4>
                     <a href="{{ asset('storage/American_Yacht_Supply_Catalog_2013_OPT.pdf') }}" target="_blank">
                         <img src="{{ asset('storage/images/ays_catalog_2013_cover_front.jpg') }}" data-rjs="3" alt="Downloadable Catalog" id="cat-cover">
@@ -151,7 +151,7 @@
                         <br>
                         Created for captains, by captains. Happy Sailing!
                     </p>
-                </div> {{--feature--}}
+                </div>--}} {{--feature--}}
 
             </div> {{--#sidebar--}}
         </div> {{--col--}}
