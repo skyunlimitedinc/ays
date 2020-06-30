@@ -2,24 +2,6 @@ version: "3"
 
 services:
 
-  # Nginx reverse proxy app
-  proxy:
-    image: jwilder/nginx-proxy:latest
-    container_name: nginx-proxy
-    restart: unless-stopped
-    ports:
-      - "8080:80"
-      - "4443:443"
-    environment:
-      SERVICE_NAME: nginx
-      SERVICE_TAGS: dev
-      HSTS: "off"
-    volumes:
-      - /etc/ssl/sky:/etc/nginx/certs
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-    networks:
-      - web-network
-
   # Laravel app (Apache & PHP services with Laravel)
   ays:
     build:
@@ -28,61 +10,20 @@ services:
         uid: 1000
       context: .
       dockerfile: Dockerfile
-    image: "sturmb/sky-schedule:2018.final"
+    image: "sturmb/sky-ays:2020.final"
     container_name: ays
     restart: unless-stopped
     tty: true
-    links:
-      - "db"
     environment:
-      SERVICE_NAME: ays
+      SERVICE_NAME: www-ays
       SERVICE_TAGS: dev
-      VIRTUAL_HOST: americanyachtsupply.com
+      VIRTUAL_HOST: ays,americanyachtsupply.com
       # VIRTUAL_PROTO: http
       # VIRTUAL_PORT: 80
       VIRTUAL_PROTO: https
       VIRTUAL_PORT: 443
       CERT_NAME: skyunlimitedinc
     working_dir: /var/www/html
-    networks:
-      - web-network
     expose:
       - "80"
       - "443"
-    depends_on:
-      - db
-
-  # MySQL Service
-  db:
-    image: mysql:5.7.29
-    container_name: schedule-db
-    restart: unless-stopped
-    tty: true
-    expose:
-      - "3306"
-    ports:
-      - "3316:3306"
-    environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      # MYSQL_ROOT_PASSWORD: test
-      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-      MYSQL_ONETIME_PASSWORD: "yes"
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    volumes:
-      - dbdata:/var/lib/mysql
-      - ./docker-config/mysql/my.cnf:/etc/mysql/my.cnf
-    networks:
-      - web-network
-
-# Docker Networks
-networks:
-  web-network:
-    driver: bridge
-
-# Volumes
-volumes:
-  dbdata:
-    driver: local
