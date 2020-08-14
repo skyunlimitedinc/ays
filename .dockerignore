@@ -1,0 +1,17 @@
+.dockerignore
+.git
+.idea
+.vscode
+_notes
+PSD
+**/*.psd
+**/*.psb
+**/*.tif
+**/*.ai
+**/*.eps
+log/*
+tmp/*
+node_modules
+vendor
+public/orders
+public/storage

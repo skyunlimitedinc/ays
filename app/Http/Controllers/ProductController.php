@@ -773,7 +773,7 @@ class ProductController extends Controller
                 $productLine->product_subcategory_id
             )
             ->whereIn('active', $activeArray)
-            ->orderBy('id', 'asc')
+            ->orderBy('priority', 'asc')
             ->get();
 
         return $this->formatSwatches($products, 'name');
