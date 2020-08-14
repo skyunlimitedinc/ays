@@ -55,5 +55,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://192.168.1.71:3316</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="plesk@sky" uuid="d84d2771-2531-4080-8aba-326e96f7351b">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://134.209.168.190:3306/sky</jdbc-url>
+    </data-source>
   </component>
 </project>
