@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="OPEN_SSH" host="206.196.6.203" id="1e4f669b-0b3d-42ff-9373-adaaf7e26dc4" keyPath="$USER_HOME$/.ssh/id_skyweb" port="22" nameFormat="DESCRIPTIVE" username="chris" />
+      <sshConfig host="206.196.6.203" id="1e4f669b-0b3d-42ff-9373-adaaf7e26dc4" keyPath="\\wsl$\Ubuntu-20.04\home\sturm\.ssh\id_rsa" port="22" nameFormat="DESCRIPTIVE" username="chris" />
     </configs>
   </component>
 </project>

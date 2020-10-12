@@ -35,6 +35,14 @@ host('skyweb')
     ->stage('prod')
     ->set('deploy_path', '/var/www/{{application}}');
 
+host('do-ays')
+    ->stage('prod')
+    ->set('deploy_path', '/var/www/html');
+
+host('159.203.72.159')
+    ->stage('prod')
+    ->set('deploy_path', '/var/www/html');
+
 // Tasks
 
 task('build', function () {
@@ -47,7 +55,7 @@ task('fix:voyager', function () {
 });
 // Reload php-fpm.
 task('reload:php-fpm', function () {
-    run('sudo /usr/sbin/service php7.2-fpm reload');
+    run('sudo /etc/init.d/php7.4-fpm reload');
 });
 // Change the group to www-data.
 task('regroup', function () {
