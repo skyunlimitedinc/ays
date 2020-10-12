@@ -12,7 +12,7 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
     git config user.name "Travis CI"
     git config user.email "itdept@skyunlimitedinc.com"
     git checkout master
-    git add .
+    git add skyunlimitedinc/ays/.
     git commit -m "Deploy"
     git push --force deploy master
 else
