@@ -15,8 +15,6 @@ before_install:
     -in .travis/travis_ed.enc -out ~/.ssh/travis_ed -d
 install:
   - composer install --optimize-autoloader --no-dev
-  - nvm install
-  - npm install npm@latest -g
   - npm install
   - npm run production
   - php artisan key:generate
