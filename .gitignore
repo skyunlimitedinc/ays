@@ -230,3 +230,6 @@ composer.phar
 *.ai
 *.eps
 /assets-raw/
+
+### Travis encrypted files
+.env.travis
