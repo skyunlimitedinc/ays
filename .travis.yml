@@ -17,6 +17,7 @@ install:
   - composer install --no-progress --no-interaction --optimize-autoloader --no-dev
   - npm install
   - npm run production
+  - php artisan config:clear
   - php artisan key:generate
   - php artisan storage:link
   - php artisan config:cache

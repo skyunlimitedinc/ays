@@ -11,6 +11,7 @@ ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && npm install"
 
 # Prep for production
 ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && npm run production"
+ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && php artisan config:clear"
 ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && php artisan key:generate"
 ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && ln -s $DEPLOY_PATH/storage/app/public $DEPLOY_PATH/public/storage"
 ssh -t $USER_NAME@$IP "cd $DEPLOY_PATH && php artisan config:cache"
