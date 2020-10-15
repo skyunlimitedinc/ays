@@ -1,4 +1,4 @@
-# American Yacht Supply
+# American Yacht Supply Web Site
 
 [![Build Status](https://travis-ci.org/skyunlimitedinc/ays.svg?branch=master)](https://travis-ci.org/skyunlimitedinc/ays)
 
