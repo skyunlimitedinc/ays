@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="skyubuntu@mysql" uuid="f97b08fc-1362-45a8-9766-1ed039981019">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.1.71:3306/sky</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="skyweb@mysql" uuid="048e2991-1acd-4dc8-a6b6-15c635065ada">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/sky</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="serverTimezone" value="America/Kentucky/Louisville" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="localhost@acsays-db" uuid="4136460f-8e1f-4921-bb32-e5ae78f5154a">
+    <data-source source="LOCAL" name="acsays-db@localhost" uuid="4136460f-8e1f-4921-bb32-e5ae78f5154a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3326</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="skyubuntu@acsays-db" uuid="ef1468b4-8ea3-412c-8adb-03c69f47ae0d">
+    <data-source source="LOCAL" name="acsays-db@skyubuntu" uuid="ef1468b4-8ea3-412c-8adb-03c69f47ae0d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -43,25 +19,19 @@
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://134.209.168.190:3306/sky</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="skyubuntu@schedule-db" uuid="a6701578-fc68-450d-a082-5bbb7cd0ed72">
+    <data-source source="LOCAL" name="schedule-db@skyubuntu" uuid="a6701578-fc68-450d-a082-5bbb7cd0ed72">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://192.168.1.71:3306</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="localhost@schedule-db" uuid="2677b01f-c82f-4812-823b-e6bac6d32c58">
+    <data-source source="LOCAL" name="schedule-db@localhost" uuid="2677b01f-c82f-4812-823b-e6bac6d32c58">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="acs-01@do" uuid="c9526de9-4b21-4d10-8e5b-6f19febc7f29">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://157.245.214.184:3306</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="db-acsays@do" uuid="01ea30a0-83a8-4a1a-8bad-5cb6adec338c">
+    <data-source source="LOCAL" name="acsays-db@do" uuid="01ea30a0-83a8-4a1a-8bad-5cb6adec338c">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
