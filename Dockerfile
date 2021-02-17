@@ -1,4 +1,4 @@
-FROM php:7.2.24-apache
+FROM php:7.4-apache
 
 # Arguments defined in docker-compose.yml
 ARG user
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
       libjpeg62-turbo-dev \
       libfreetype6-dev \
       git \
-      zlib1g-dev \
+      libzip-dev \
       zip \
       unzip \
       nodejs \
@@ -37,13 +37,11 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure pdo_mysql \
       --with-pdo-mysql=mysqlnd \
     && docker-php-ext-configure gd \
-      --with-gd \
-      --with-freetype-dir=/usr/include/ \
-      --with-jpeg-dir=/usr/include/ \
-      --with-png-dir=/usr/include/ \
+      --enable-gd \
+      --with-freetype=/usr/include/ \
+      --with-jpeg=/usr/include/ \
     && docker-php-ext-install \
       intl \
-      mbstring \
       pcntl \
       pdo_mysql \
       pdo_pgsql \
@@ -53,7 +51,7 @@ RUN apt-get update && apt-get install -y \
       gd
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer --1
 
 
 # Change uid and gid of apache to docker user uid/gid
