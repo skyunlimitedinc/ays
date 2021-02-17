@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id PK.
  *                 Also serves as the priority of the feature/option. The higher the priority, the higher on the list it should appear.
- *                 
+ * 
  *                 29000s and up: Highest priority stuff.
  *                 28000s: Imprint method count.
  *                 27000s: Individual imprint methods.
