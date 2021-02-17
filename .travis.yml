@@ -14,10 +14,11 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_04c1f44da757_key -iv $encrypted_04c1f44da757_iv
     -in .travis/travis_ed.enc -out ~/.ssh/travis_ed -d
 install:
+  - composer self-update --1
   - composer install --no-progress --no-interaction --optimize-autoloader --no-dev
   - npm install
   - npm run production
-  - php artisan config:clear
+  - php artisan view:clear
   - php artisan key:generate
   - php artisan storage:link
   - php artisan config:cache
