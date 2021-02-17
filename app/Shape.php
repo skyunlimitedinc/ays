@@ -4,6 +4,24 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Shape
+ *
+ * @property string $id PK. The Shape. Please use snake_case.
+ * @property string $long_name The display name of the Shape. Symbols and spaces allowed.
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Product[] $products
+ * @property-read int|null $products_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape whereLongName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Shape whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Shape extends Model
 {
     /**
