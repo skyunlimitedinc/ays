@@ -51,7 +51,7 @@ RUN apt-get update && apt-get install -y \
       gd
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer --1
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
 
 # Change uid and gid of apache to docker user uid/gid
