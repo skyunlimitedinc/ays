@@ -1,0 +1,62 @@
+# Changelog
+
+<a name="2020.9.0"></a>
+## 2020.9.0 (2021-02-17)
+
+### Changed
+
+- ⬆️ Updates to Laravel 6.0 [[ce093ad](https://github.com/skyunlimitedinc/ays/commit/ce093addf298ecc27f0ab488df485d894a12afd2)]
+- ⬆️ Updates Composer dependencies for Laravel 5.8 [[99841f3](https://github.com/skyunlimitedinc/ays/commit/99841f315e3bf6a7daf5dc87f06c21f5c6be61b0)]
+- 🔧 Configures PhpStorm to behave better [[d2628ba](https://github.com/skyunlimitedinc/ays/commit/d2628bac402f65fd6bb96ee07e229db0f719a080)]
+- 🔧 JetBrains config files updated [[f2e4594](https://github.com/skyunlimitedinc/ays/commit/f2e459498565570a0f166e024a93a71fa9595d21)]
+
+### Removed
+
+- 🔥 Removes old and unnecessary dev scripts [[a01c16d](https://github.com/skyunlimitedinc/ays/commit/a01c16da2106403cce45cef55c8f66fa698376b5)]
+
+### Miscellaneous
+
+- 🔨 Runs the PhpStorm IDE Helper [[0a53e93](https://github.com/skyunlimitedinc/ays/commit/0a53e9381458fb2826139205eb2c788f90e1a74a)]
+- 🔨 Updates Docker build script and tweaks port numbers [[f7a6d87](https://github.com/skyunlimitedinc/ays/commit/f7a6d87e87ed56b5c6095a30337c442a24c56e45)]
+- 🔨 Adds project info to `package.json` [[32ec431](https://github.com/skyunlimitedinc/ays/commit/32ec431a11dbc29073f0cda3177d46aa6937fce0)]
+- 🙈 Updates .gitignore to modern settings [[c41d071](https://github.com/skyunlimitedinc/ays/commit/c41d0715539c0f910b6ee5d2ce164a7d08edb46b)]
+
+<a name="The Before Times"></a>
+## The Before Times
+
+-  README fix [[67231eb](https://github.com/skyunlimitedinc/ays/commit/67231eb8fd0b1cf5492b5b468b4b495059160ca4)]
+-  README Build Status [[f24eb18](https://github.com/skyunlimitedinc/ays/commit/f24eb18df71d03e6b4a463134a7d19a04799daec)]
+-  config:clear [[8e04c7d](https://github.com/skyunlimitedinc/ays/commit/8e04c7d50a3948f41594db3adbe0638a05fcd87f)]
+-  Revert "Remove Linking Temporarily" [[6cca43e](https://github.com/skyunlimitedinc/ays/commit/6cca43e6c6931d4a6397ac01a32c5c8cdfd69b33)]
+-  Remove Linking Temporarily [[d010c5f](https://github.com/skyunlimitedinc/ays/commit/d010c5fc76886765fbed391a2321df944c1aed7f)]
+-  Manual Storage Link [[20f53a2](https://github.com/skyunlimitedinc/ays/commit/20f53a2c9774ec9ff93f3a650619592793026d3d)]
+-  Skip Skip Cleanup [[5101025](https://github.com/skyunlimitedinc/ays/commit/5101025b317343fa64a40877fd4552ee6fb5a8ac)]
+-  Skip Cleanup [[0a5f9aa](https://github.com/skyunlimitedinc/ays/commit/0a5f9aa4a2477f9c8857d9bf5f4173e0c0ced720)]
+-  Double Quotes [[e0bcd55](https://github.com/skyunlimitedinc/ays/commit/e0bcd55b9c062fc9d3e1b4e1fb2440c45a47571b)]
+-  Ansible Provisioning [[5165594](https://github.com/skyunlimitedinc/ays/commit/5165594a7cabe15ce77242096e2f28ba95b6e1f0)]
+-  rsync -aO [[94ac125](https://github.com/skyunlimitedinc/ays/commit/94ac12581f5d03e4a3adb482c8a32c165bd021c4)]
+-  rsync -a [[a572674](https://github.com/skyunlimitedinc/ays/commit/a57267430ce642b40b81ce77461163ff09b2f336)]
+-  rsync [[6dc3c25](https://github.com/skyunlimitedinc/ays/commit/6dc3c25a796ff1a52d23e7a8cb1824461932a4dd)]
+-  'Add' Location [[fa31d4b](https://github.com/skyunlimitedinc/ays/commit/fa31d4b14b28f078c555ffc95c866f8196c0a0b2)]
+-  Reattach HEAD [[1dd78a6](https://github.com/skyunlimitedinc/ays/commit/1dd78a6fba18bf11658cf4970c390ae32db971ab)]
+-  Skip Script? [[0eba718](https://github.com/skyunlimitedinc/ays/commit/0eba718eafd65d2a1016c3cd9c87fe2f6410548b)]
+-  Removes NVM [[dd8e7c5](https://github.com/skyunlimitedinc/ays/commit/dd8e7c5ae70d67547c139c0c2eebdd767c05447e)]
+-  Xenial-php7.2 [[0a44adb](https://github.com/skyunlimitedinc/ays/commit/0a44adb233c94c12c5b2d12e98ba501b053ee659)]
+-  Travis [[3f98605](https://github.com/skyunlimitedinc/ays/commit/3f98605dce5db9d790bcd8987ff96d389fa6cb50)]
+-  August 2020 Fixes [[4b12145](https://github.com/skyunlimitedinc/ays/commit/4b121452b264568eac05aa00bcc9503ac05f5d9a)]
+-  Images [[551b0c0](https://github.com/skyunlimitedinc/ays/commit/551b0c00b7663b4b922ae177b1abfc7b64f4eb95)]
+-  Don't Ignore Storage [[68fae6d](https://github.com/skyunlimitedinc/ays/commit/68fae6d563e6b655e475e04c8217e1ab2e6c2e2d)]
+-  Merge branch 'dockerize' [[a63defd](https://github.com/skyunlimitedinc/ays/commit/a63defdf2c3692efda8ad138f5354b5f3468d805)]
+-  Workspace [[edd16c1](https://github.com/skyunlimitedinc/ays/commit/edd16c1d27c90954bd2ad7d720cccc4c0b0388ad)]
+-  Workspace [[1c19c2d](https://github.com/skyunlimitedinc/ays/commit/1c19c2dec92ce6b6acef92693ca808ae8a9db050)]
+-  HAProxy [[e28df7e](https://github.com/skyunlimitedinc/ays/commit/e28df7ee79d2e562aed287245cc55f026d9f62a6)]
+-  A bunch of .idea files changed [[7bb1dcf](https://github.com/skyunlimitedinc/ays/commit/7bb1dcf708110696d852f083031e511418a6d4a0)]
+-  Sort Thumbnails [[83ff32d](https://github.com/skyunlimitedinc/ays/commit/83ff32d9072ca446870d7eb572d2d295fcccf55e)]
+-  First attempt at dockerizing AYS [[bac5348](https://github.com/skyunlimitedinc/ays/commit/bac534822bbd9ed8129b33f143d69ae98a98677a)]
+-  Hide Catalog [[71dc492](https://github.com/skyunlimitedinc/ays/commit/71dc492435c50b4de3f69fd95146180d4737e21b)]
+-  AYS 2020 [[2c34c13](https://github.com/skyunlimitedinc/ays/commit/2c34c13346410a123c1bf760e963eaf64f630c24)]
+-  Submodule Re-add [[9723669](https://github.com/skyunlimitedinc/ays/commit/9723669a2eb04f221dbf0aeafc1f29f4d198ed67)]
+-  Removing a non-submodule [[3f8af63](https://github.com/skyunlimitedinc/ays/commit/3f8af63fb7a65459d0f13b51fdff4a3308d1c00a)]
+-  Initial re-commit [[0b1a098](https://github.com/skyunlimitedinc/ays/commit/0b1a0980b3f624b224b62a074f66f3896d3b21f6)]
+
+
