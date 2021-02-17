@@ -1,5 +1,23 @@
 # Changelog
 
+<a name="2020.9.2"></a>
+## 2020.9.2 (2021-02-17)
+
+### Added
+
+- ➕ Replaces deprecated faker library with FakerPHP [[d7c8cad](https://github.com/skyunlimitedinc/ays/commit/d7c8cad8bc55f53b659c17855062a435e81f08cd)]
+
+### Changed
+
+- 👽 Replaces sample factory with new L8 version [[3c3b285](https://github.com/skyunlimitedinc/ays/commit/3c3b285403cfcdb751bb69cbd5fb5fb804a00888)]
+- 👽 Namespaces factories and seeders [[22872e4](https://github.com/skyunlimitedinc/ays/commit/22872e4d7a63898852d327bf782da5c20f23ed7d)]
+- ⬆️ Updates to Laravel 8.0 [[088c3b6](https://github.com/skyunlimitedinc/ays/commit/088c3b6e9216c9f973364d480086ae1aec7ab3ba)]
+
+### Miscellaneous
+
+- 🩹 Let the Docker image use Composer 2 [[7a457a7](https://github.com/skyunlimitedinc/ays/commit/7a457a773dfd1dcce5cb9b97d5e48ee6b884ad84)]
+
+
 <a name="2020.9.1"></a>
 ## 2020.9.1 (2021-02-17)
 
