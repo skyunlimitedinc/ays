@@ -1,4 +1,25 @@
 {
+  "name": "ays",
+  "description": "[![Build Status](https://travis-ci.org/skyunlimitedinc/ays.svg?branch=master)](https://travis-ci.org/skyunlimitedinc/ays)",
+  "version": "2020.8.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyunlimitedinc/ays.git"
+  },
+  "keywords": [
+    "laravel",
+    "voyager"
+  ],
+  "author": "Chris McGee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyunlimitedinc/ays/issues"
+  },
+  "homepage": "https://github.com/skyunlimitedinc/ays#readme",
   "private": true,
   "scripts": {
     "dev": "npm run development",
