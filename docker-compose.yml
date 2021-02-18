@@ -8,17 +8,17 @@ services:
     container_name: balancer
     restart: unless-stopped
     volumes:
-      - ./docker-config/haproxy:/usr/local/etc/haproxy:ro
+      - "~/web/config/haproxy:/usr/local/etc/haproxy:ro"
     networks:
       - web
     ports:
-      - 8080:80
-      - 4443:443
-      - 1936:1936
+      - "80:80"
+      - "443:443"
+      - "1936:1936"
     depends_on:
       - ays
 
-  # Laravel app (Apache & PHP services with Laravel)
+  # American Yacht Supply site (Apache & PHP services with Laravel)
   ays:
     build:
       args:
@@ -32,28 +32,37 @@ services:
     working_dir: /var/www/html
     depends_on:
       - acsays-db
+      - redis
     ports:
-      - 8083:80
-      - 4545:443
+      - "8083:80"
+      - "4545:443"
     networks:
       - web
 
-  # MySQL Service
+  # MySQL Service for the ACS and AYS sites' databases
   acsays-db:
-    image: mysql:5.7.29
+    image: mysql
     container_name: acsays-db
     restart: unless-stopped
     ports:
-      - 3316:3306
+      - "3326:3306"
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_ONETIME_PASSWORD: "yes"
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - dbdata:/var/lib/mysql
-      - ./docker-config/mysql/my.cnf:/etc/mysql/my.cnf
+      - acsays-dbdata:/var/lib/mysql
+    networks:
+      - web
+
+  # Redis Service
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
     networks:
       - web
 
@@ -61,8 +70,13 @@ services:
 networks:
   web:
     driver: bridge
+    name: web
 
 # Volumes
 volumes:
-  dbdata:
+  acsays-dbdata:
     driver: local
+    name: acsays-dbdata
+  redis-data:
+    driver: local
+    name: redis-data
