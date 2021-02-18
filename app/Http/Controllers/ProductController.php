@@ -8,6 +8,8 @@ use App\ImprintType;
 use App\Product;
 use App\ProductFeature;
 use App\ProductLine;
+use Cache;
+use DateInterval;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\View;
@@ -33,10 +35,16 @@ class ProductController extends Controller
         // Set whether or not to include inactive items.
         $activeArray = [$includeInactive === 'include_inactive' ? 0 : 1, 1];
 
-        $allProductLines = ProductLine::with([
-            'productSubcategory',
-            'printMethod'
-        ])->get();
+        $allProductLines = Cache::remember(
+            'product_lines:all',
+            new DateInterval('P1M'),
+            function () {
+                return ProductLine::with([
+                    'productSubcategory',
+                    'printMethod'
+                ])->get();
+            }
+        );
 
         // Filter to only the _single_ Product Line we want.
         $productLine = $allProductLines
@@ -108,12 +116,18 @@ class ProductController extends Controller
     private function getFeatures($productLineId, $activeArray)
     {
         // Get the Product Features associated with the given Product Line ID.
-        $allProductFeatures = ProductFeature::with([
-            'productFeaturesPivot',
-            'productLines'
-        ])
-            ->orderBy('id', 'desc')
-            ->get();
+        $allProductFeatures = Cache::remember(
+            'product_features:all',
+            new DateInterval('P1M'),
+            function () {
+                return ProductFeature::with([
+                    'productFeaturesPivot',
+                    'productLines'
+                ])
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+        );
 
         // Narrow the results to only the Product Features we want for the given Product Line ID.
         $narrowedProductFeatures = $allProductFeatures
@@ -325,27 +339,42 @@ class ProductController extends Controller
         }
 
         // Get the Products associated with the given Product Line ID.
-        $products = Product::whereHas('printMethods', function ($query) use (
-            $productLine
-        ) {
-            $query->where('print_method_id', $productLine->print_method_id);
-        })
-            ->where(
-                'product_subcategory_id',
-                $productLine->productSubcategory->id
-            )
-            ->whereIn('active', $activeArray)
-            ->orderBy('priority', 'asc')
-            ->get();
+        $products = Cache::remember(
+            "products:for_{$productLine}",
+            new DateInterval('P1M'),
+            function () use ($activeArray, $productLine) {
+                return Product::whereHas('printMethods', function ($query) use (
+                    $productLine
+                ) {
+                    $query->where(
+                        'print_method_id',
+                        $productLine->print_method_id
+                    );
+                })
+                    ->where(
+                        'product_subcategory_id',
+                        $productLine->productSubcategory->id
+                    )
+                    ->whereIn('active', $activeArray)
+                    ->orderBy('priority', 'asc')
+                    ->get();
+            }
+        );
 
         // Get all of the Prices along with their associated ProductLineQuantityBreaks, ProductLines, QuantityBreaks, and Products.
-        $allPrices = AcsPrice::with([
-            'productLineQuantityBreak.productLine',
-            'productLineQuantityBreak.quantityBreak',
-            'productLineQuantityBreak.acsCharges.chargeType',
-            'productLineQuantityBreak.acsPrices',
-            'product'
-        ])->get();
+        $allPrices = Cache::remember(
+            'prices:all',
+            new DateInterval('P1M'),
+            function () {
+                return AcsPrice::with([
+                    'productLineQuantityBreak.productLine',
+                    'productLineQuantityBreak.quantityBreak',
+                    'productLineQuantityBreak.acsCharges.chargeType',
+                    'productLineQuantityBreak.acsPrices',
+                    'product'
+                ])->get();
+            }
+        );
         // Filter that massive list down to only Prices whose ProductLineQuantityBreaks are active.
         $filteredPLQBs = $allPrices->filter(function ($value) use (
             $activeArray
@@ -706,20 +735,26 @@ class ProductController extends Controller
      */
     private function getSwatchesProduct($productLine, array $activeArray)
     {
-        $products = Product::with([
-            'colors' => function ($query) use ($activeArray) {
-                $query
+        $products = Cache::remember(
+            "products:with_colors",
+            new DateInterval('P1M'),
+            function () use ($productLine, $activeArray) {
+                return Product::with([
+                    'colors' => function ($query) use ($activeArray) {
+                        $query
+                            ->whereIn('active', $activeArray)
+                            ->orderBy('priority', 'asc');
+                    }
+                ])
+                    ->where(
+                        'product_subcategory_id',
+                        $productLine->product_subcategory_id
+                    )
                     ->whereIn('active', $activeArray)
-                    ->orderBy('priority', 'asc');
+                    ->orderBy('priority', 'asc')
+                    ->get();
             }
-        ])
-            ->where(
-                'product_subcategory_id',
-                $productLine->product_subcategory_id
-            )
-            ->whereIn('active', $activeArray)
-            ->orderBy('priority', 'asc')
-            ->get();
+        );
 
         return $this->formatSwatches($products, 'name');
     }
@@ -793,40 +828,49 @@ class ProductController extends Controller
     private function getSwatchesImprintColor($productLine, array $activeArray)
     {
         // Retrieve the Color Types for this Product Line and its associated info that we need.
-        $colorTypes = ColorType::whereHas('productLines', function (
-            $query
-        ) use ($activeArray, $productLine) {
-            $query
-                ->where('product_line_id', $productLine->id)
-                ->whereIn('active', $activeArray);
-        })
-            ->with([
-                'colors' => function ($query) use ($activeArray, $productLine) {
+        $colorTypes = Cache::remember(
+            "color_types:for_{$productLine}",
+            new DateInterval('P1M'),
+            function () use ($productLine, $activeArray) {
+                return ColorType::whereHas('productLines', function (
                     $query
-                        ->with([
-                            'printMethods' => function ($subquery) use (
-                                $activeArray,
-                                $productLine
-                            ) {
-                                $subquery
-                                    ->where(
-                                        'print_method_id',
-                                        $productLine->print_method_id
-                                    )
-                                    ->whereIn(
-                                        'color_print_method.active',
-                                        $activeArray
-                                    )
-                                    ->orderBy('priority', 'asc');
-                            }
-                        ])
+                ) use ($activeArray, $productLine) {
+                    $query
+                        ->where('product_line_id', $productLine->id)
                         ->whereIn('active', $activeArray);
-                }
-            ])
-            ->whereIn('active', $activeArray)
-            ->where('id', '<>', 'product')
-            ->orderBy('priority', 'asc')
-            ->get();
+                })
+                    ->with([
+                        'colors' => function ($query) use (
+                            $activeArray,
+                            $productLine
+                        ) {
+                            $query
+                                ->with([
+                                    'printMethods' => function ($subquery) use (
+                                        $activeArray,
+                                        $productLine
+                                    ) {
+                                        $subquery
+                                            ->where(
+                                                'print_method_id',
+                                                $productLine->print_method_id
+                                            )
+                                            ->whereIn(
+                                                'color_print_method.active',
+                                                $activeArray
+                                            )
+                                            ->orderBy('priority', 'asc');
+                                    }
+                                ])
+                                ->whereIn('active', $activeArray);
+                        }
+                    ])
+                    ->whereIn('active', $activeArray)
+                    ->where('id', '<>', 'product')
+                    ->orderBy('priority', 'asc')
+                    ->get();
+            }
+        );
 
         return $this->formatSwatches($colorTypes, 'long_name');
     }
@@ -842,16 +886,22 @@ class ProductController extends Controller
     {
         $output = "";
 
-        $imprintTypes = ImprintType::whereHas('productLines', function (
-            $query
-        ) use ($activeArray, $productLine) {
-            $query
-                ->where('product_line_id', $productLine->id)
-                ->whereIn('active', $activeArray);
-        })
-            ->whereIn('active', $activeArray)
-            ->orderBy('priority', 'asc')
-            ->get();
+        $imprintTypes = Cache::remember(
+            "imprint_type:for_{$productLine}",
+            new DateInterval('P1M'),
+            function () use ($productLine, $activeArray) {
+                return ImprintType::whereHas('productLines', function (
+                    $query
+                ) use ($activeArray, $productLine) {
+                    $query
+                        ->where('product_line_id', $productLine->id)
+                        ->whereIn('active', $activeArray);
+                })
+                    ->whereIn('active', $activeArray)
+                    ->orderBy('priority', 'asc')
+                    ->get();
+            }
+        );
 
         // If there are no imprint types _at all_, just return null.
         if ($imprintTypes->count() < 2) {
