@@ -23,7 +23,9 @@ class ClipartController extends Controller
             'clipart:subcategory',
             new DateInterval('P1M'),
             function () use ($subcategory) {
-                ClipartSubcategory::with('clipartCategory')->find($subcategory);
+                return ClipartSubcategory::with('clipartCategory')->find(
+                    $subcategory
+                );
             }
         );
 
