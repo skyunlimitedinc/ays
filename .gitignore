@@ -349,4 +349,4 @@ public/orders
 .idea/sonarlint
 
 ### Sensitive files
-.env.*
+/.env.*
