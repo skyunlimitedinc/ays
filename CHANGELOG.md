@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2020.10.1"></a>
+## 2020.10.1 (2021-02-18)
+
+### Fixed
+
+- 💚 Re-adds the encoded travis environment file [[37fa89d](https://github.com/skyunlimitedinc/ays/commit/37fa89d92251e7d31a5cc09c910bb244bdd82988)]
+
+
 <a name="2020.10.0"></a>
 ## 2020.10.0 (2021-02-18)
 
