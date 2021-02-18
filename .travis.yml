@@ -33,4 +33,6 @@ deploy:
     script: bash scripts/deploy.sh
     on:
       repo: skyunlimitedinc/ays
-      branch: master
+      branch:
+        - master
+        - main
