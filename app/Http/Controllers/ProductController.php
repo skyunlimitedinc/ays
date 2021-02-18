@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\AcsPrice;
@@ -7,8 +8,9 @@ use App\ImprintType;
 use App\Product;
 use App\ProductFeature;
 use App\ProductLine;
-use App\ProductNote;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
@@ -20,7 +22,7 @@ class ProductController extends Controller
      * @param $subcategory
      * @param $printMethod
      * @param string $includeInactive
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index(
         $category,
@@ -302,90 +304,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Prepare the HTML for the thumbnail images for each Product.
-     *
-     * @param $productLine
-     * @param $product
-     * @param $decodedProductName
-     * @return string
-     */
-    private function getThumbnails($productLine, $product, $decodedProductName)
-    {
-        // Preface the main thumbnail with the "Sample" ribbon.
-        $result =
-            "<div class='thumbnail__ribbon-area'><div class='thumbnail__ribbon'>Sample</div></div>" .
-            PHP_EOL;
-
-        $folder = "storage/images/products-assets/{$productLine->productSubcategory->productCategory->id}/{$productLine->productSubcategory->short_name}/";
-        //        $html_folder = substr($folder, 3);
-        $productList = [$decodedProductName];
-
-        // If this Product is one that has multiple colors, populate $productList with all of the Product Names, but have "(COLOR)" replaced with the actual Color name, formatted properly.
-        if (
-            stripos($decodedProductName, "(COLOR)") !== false &&
-            stripos($decodedProductName, "TIP") !== 0 // Exclude 'TIP - (COLOR)' from this algorithm.
-        ) {
-            // Get all the colors available for this single Product.
-            $productList = [];
-            $productColors = $product->colors->all();
-            foreach ($productColors as $productColor) {
-                // Iterate through them, format them the same as the thumbnail filenames, then put them in place of the "(COLOR)" text.
-                // This is all to prepare for the thumbnail filenames.
-                $condensedColorName = str_replace(
-                    ['/', ' '],
-                    ['', ''],
-                    $productColor->short_name
-                );
-                $upperCaseColorName = strtoupper($condensedColorName);
-                $imageName = str_replace(
-                    '(COLOR)',
-                    $upperCaseColorName,
-                    $decodedProductName
-                );
-                $productList[] = $imageName;
-            }
-        }
-
-        // Prepare the class and style for multi-colored Products.
-        $rotatingImagesClass = "";
-        $rotatingImagesStyle = "";
-        if (count($productList) > 1) {
-            $rotatingImagesClass = "rotating-item";
-            $rotatingImagesStyle = "style='display: none;'";
-        }
-
-        // Set the correct class for Products that have a Print Method.
-        $sampleExists =
-            preg_match("/^[DTH]-/", $decodedProductName) > 0 ? true : false;
-        $blankClass = '';
-        if ($sampleExists) {
-            $blankClass = 'thumbnail__image--blank';
-        }
-
-        // Build up the HTML.
-        foreach ($productList as $image) {
-            // Prepare the blank and sample thumbnails.
-            $blankImage = asset($folder . $image . '-blank_thumb.png');
-            $sampleImage = asset($folder . $image . '-sample_thumb.png');
-
-            $result .=
-                "<div class='{$rotatingImagesClass}' {$rotatingImagesStyle}>" .
-                PHP_EOL;
-            $result .=
-                "<img src='{$blankImage}' class='rounded thumbnail__image {$blankClass}' data-rjs='3' alt='{$image}'>" .
-                PHP_EOL;
-            if ($sampleExists) {
-                $result .=
-                    "<img src='{$sampleImage}' class='rounded thumbnail__image thumbnail__image--sample' data-rjs='3' style='display: none;' alt='{$image}'>" .
-                    PHP_EOL;
-            }
-            $result .= "</div>" . PHP_EOL;
-        }
-
-        return $result;
-    }
-
-    /**
      * Get all of the Products for a given Product Line.
      *
      * @param $productLine
@@ -610,7 +528,9 @@ class ProductController extends Controller
             $everyThousand = false;
             foreach ($quantityBreaks as $index => $break) {
                 // Keep only those charges that have amounts for them.
-                $charges = $break->productLineQuantityBreak->acsCharges->sortBy('charge_type_id');
+                $charges = $break->productLineQuantityBreak->acsCharges->sortBy(
+                    'charge_type_id'
+                );
                 //                $charges = $charges->reject(function ($charge) {
                 //                    return empty($charge->amount);
                 //                });
@@ -694,6 +614,117 @@ class ProductController extends Controller
     }
 
     /**
+     * Prepare the HTML for the thumbnail images for each Product.
+     *
+     * @param $productLine
+     * @param $product
+     * @param $decodedProductName
+     * @return string
+     */
+    private function getThumbnails($productLine, $product, $decodedProductName)
+    {
+        // Preface the main thumbnail with the "Sample" ribbon.
+        $result =
+            "<div class='thumbnail__ribbon-area'><div class='thumbnail__ribbon'>Sample</div></div>" .
+            PHP_EOL;
+
+        $folder = "storage/images/products-assets/{$productLine->productSubcategory->productCategory->id}/{$productLine->productSubcategory->short_name}/";
+        //        $html_folder = substr($folder, 3);
+        $productList = [$decodedProductName];
+
+        // If this Product is one that has multiple colors, populate $productList with all of the Product Names, but have "(COLOR)" replaced with the actual Color name, formatted properly.
+        if (
+            stripos($decodedProductName, "(COLOR)") !== false &&
+            stripos($decodedProductName, "TIP") !== 0 // Exclude 'TIP - (COLOR)' from this algorithm.
+        ) {
+            // Get all the colors available for this single Product.
+            $productList = [];
+            $productColors = $product->colors->all();
+            foreach ($productColors as $productColor) {
+                // Iterate through them, format them the same as the thumbnail filenames, then put them in place of the "(COLOR)" text.
+                // This is all to prepare for the thumbnail filenames.
+                $condensedColorName = str_replace(
+                    ['/', ' '],
+                    ['', ''],
+                    $productColor->short_name
+                );
+                $upperCaseColorName = strtoupper($condensedColorName);
+                $imageName = str_replace(
+                    '(COLOR)',
+                    $upperCaseColorName,
+                    $decodedProductName
+                );
+                $productList[] = $imageName;
+            }
+        }
+
+        // Prepare the class and style for multi-colored Products.
+        $rotatingImagesClass = "";
+        $rotatingImagesStyle = "";
+        if (count($productList) > 1) {
+            $rotatingImagesClass = "rotating-item";
+            $rotatingImagesStyle = "style='display: none;'";
+        }
+
+        // Set the correct class for Products that have a Print Method.
+        $sampleExists =
+            preg_match("/^[DTH]-/", $decodedProductName) > 0 ? true : false;
+        $blankClass = '';
+        if ($sampleExists) {
+            $blankClass = 'thumbnail__image--blank';
+        }
+
+        // Build up the HTML.
+        foreach ($productList as $image) {
+            // Prepare the blank and sample thumbnails.
+            $blankImage = asset($folder . $image . '-blank_thumb.png');
+            $sampleImage = asset($folder . $image . '-sample_thumb.png');
+
+            $result .=
+                "<div class='{$rotatingImagesClass}' {$rotatingImagesStyle}>" .
+                PHP_EOL;
+            $result .=
+                "<img src='{$blankImage}' class='rounded thumbnail__image {$blankClass}' data-rjs='3' alt='{$image}'>" .
+                PHP_EOL;
+            if ($sampleExists) {
+                $result .=
+                    "<img src='{$sampleImage}' class='rounded thumbnail__image thumbnail__image--sample' data-rjs='3' style='display: none;' alt='{$image}'>" .
+                    PHP_EOL;
+            }
+            $result .= "</div>" . PHP_EOL;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Get all of the Product Color swatches for a given Product Line.
+     *
+     * @param $productLine
+     * @param array $activeArray
+     * @return string
+     */
+    private function getSwatchesProduct($productLine, array $activeArray)
+    {
+        $products = Product::with([
+            'colors' => function ($query) use ($activeArray) {
+                $query
+                    ->whereIn('active', $activeArray)
+                    ->orderBy('priority', 'asc');
+            }
+        ])
+            ->where(
+                'product_subcategory_id',
+                $productLine->product_subcategory_id
+            )
+            ->whereIn('active', $activeArray)
+            ->orderBy('priority', 'asc')
+            ->get();
+
+        return $this->formatSwatches($products, 'name');
+    }
+
+    /**
      * Format a collection of categorized Colors into nice HTML.
      *
      * @param $swatchCategories
@@ -750,33 +781,6 @@ class ProductController extends Controller
         }
 
         return $output;
-    }
-
-    /**
-     * Get all of the Product Color swatches for a given Product Line.
-     *
-     * @param $productLine
-     * @param array $activeArray
-     * @return string
-     */
-    private function getSwatchesProduct($productLine, array $activeArray)
-    {
-        $products = Product::with([
-            'colors' => function ($query) use ($activeArray) {
-                $query
-                    ->whereIn('active', $activeArray)
-                    ->orderBy('priority', 'asc');
-            }
-        ])
-            ->where(
-                'product_subcategory_id',
-                $productLine->product_subcategory_id
-            )
-            ->whereIn('active', $activeArray)
-            ->orderBy('priority', 'asc')
-            ->get();
-
-        return $this->formatSwatches($products, 'name');
     }
 
     /**
