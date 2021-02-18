@@ -1,5 +1,32 @@
 # Changelog
 
+<a name="2020.10.0"></a>
+## 2020.10.0 (2021-02-18)
+
+### Added
+
+- 👷‍♂️ Save some time during artisan commands [[708dd49](https://github.com/skyunlimitedinc/ays/commit/708dd49109d923f33735b2e58b6e19207b5c51af)]
+- 👷‍♂️ Set deployment to run from two branches [[3ae0f51](https://github.com/skyunlimitedinc/ays/commit/3ae0f511f6bbd26110b4c76411240bfb5eab82b9)]
+- ➕ Adds ext-pdo for updating the database config [[d11007d](https://github.com/skyunlimitedinc/ays/commit/d11007da7b240abb29a5085b40fc27da68e4a595)]
+
+### Changed
+
+- 🚨 Lints the deployment shell script [[c6385d5](https://github.com/skyunlimitedinc/ays/commit/c6385d51d30d20dff05b7c1870a1b967256a00d9)]
+- 🔧 Configures PhpRedis and sets it to be used for caching [[40cd91d](https://github.com/skyunlimitedinc/ays/commit/40cd91d8f7adbf98856c54b09ed0fb623368fe82)]
+- ⚡ Adds caching to the `ProductController` [[cb34ff8](https://github.com/skyunlimitedinc/ays/commit/cb34ff88942309441e3f599dff17a55ca5ca7100)]
+- 🎨 Prettifies `ProductController` [[bc20954](https://github.com/skyunlimitedinc/ays/commit/bc209545ec323b177434735e71ec50890f47ba0a)]
+- ⚡ Adds caching to the `ClipartController` [[eeb473f](https://github.com/skyunlimitedinc/ays/commit/eeb473f77a7145e7a61ba5675fff6b55b56e955a)]
+
+### Fixed
+
+- 💚 Updates exclusions during rsync [[26ddee9](https://github.com/skyunlimitedinc/ays/commit/26ddee9af368fcc27535aea670b5455100549056)]
+- 🐛 Forgot to return the Clipart Subcategories [[6b0c5c4](https://github.com/skyunlimitedinc/ays/commit/6b0c5c4a9bedc6fc6fc1597fc49d85b544682a00)]
+
+### Miscellaneous
+
+- 🔨 Updates the docker compose file to the 'master' version [[65188b5](https://github.com/skyunlimitedinc/ays/commit/65188b5a7f67363e3074138dbb2357c0d3c1f35c)]
+
+
 <a name="2020.9.2"></a>
 ## 2020.9.2 (2021-02-17)
 
