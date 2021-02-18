@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\ClipartSubcategory;
-use Illuminate\Http\Request;
+use Cache;
+use DateInterval;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class ClipartController extends Controller
 {
@@ -11,13 +14,17 @@ class ClipartController extends Controller
      * Show the Clipart view for a given category.
      *
      * @param $subcategory
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index($subcategory)
     {
         // Get the Model for the given subcategory id.
-        $clipartSubcategory = ClipartSubcategory::with('clipartCategory')->find(
-            $subcategory
+        $clipartSubcategory = Cache::remember(
+            'clipart:subcategory',
+            new DateInterval('P1M'),
+            function () use ($subcategory) {
+                ClipartSubcategory::with('clipartCategory')->find($subcategory);
+            }
         );
 
         // Get all of the images in the clipart folder for the subcategory.
