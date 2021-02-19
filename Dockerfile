@@ -67,7 +67,9 @@ COPY --chown=www-data:www-data . $APP_HOME
 RUN sed -i -e "s/html/html\/public/g" /etc/apache2/sites-enabled/000-default.conf
 
 # Fix the .env file for production.
-RUN mv "$APP_HOME/.env.production" "$APP_HOME/.env"
+#RUN mv "$APP_HOME/.env.production" "$APP_HOME/.env"
+gpg --quiet --batch --yes --decrypt --passphrase="$ENV_PASSPHRASE" \
+--output "$HOME/.env" "$HOME/.github/secrets/.env.gpg"
 
 # Enable apache module rewrite
 RUN a2enmod rewrite
