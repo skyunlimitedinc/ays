@@ -72,6 +72,9 @@ jobs:
       - name: Cache Routes
         run: php artisan route:cache
 
+      - name: Prepare SSH
+        run: ssh-keyscan -H "$IP" >>~/.ssh/known_hosts
+
       - name: SSH Deploy
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
