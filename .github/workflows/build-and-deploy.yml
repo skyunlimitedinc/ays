@@ -1,0 +1,112 @@
+name: Build-and-Deploy
+on:
+  push:
+    branches:
+      - actions
+jobs:
+  build:
+    name: Build Laravel App
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+
+      - name: Install Node Packages
+        run: npm install
+
+      - name: Compile JavaScript & CSS
+        run: npm run production
+
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
+        with:
+          php-version: '7.4'
+          extensions: mbstring, dom, fileinfo, mysql
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          # Use composer.json for key, if composer.lock is not committed.
+          # key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Decrypt Environment File
+        run: ./.github/scripts/decrypt_env.sh
+        env:
+          ENV_PASSPHRASE: ${{ secrets.ENV_PASSPHRASE }}
+
+      - name: Prepare the application
+        run: |
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
+          php artisan key:generate
+
+      - name: Clear Views
+        run: php artisan view:clear
+
+      - name: Generate Key
+        run: php artisan key:generate
+
+      - name: Link Storage
+        run: php artisan storage:link
+
+      - name: Cache Config
+        run: php artisan config:cache
+
+      - name: Cache Routes
+        run: php artisan route:cache
+
+      - name: SSH Deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.TRAVIS_SSH_KEY }}
+          ARGS: >-
+            -aO
+            --chown=www-data:www-data
+            --fake-super
+            --exclude={'.git','.env','storage/logs','storage/framework/cache/data'}
+            --del
+          SOURCE: "./"
+          REMOTE_HOST: ${{ secrets.IP }}
+          REMOTE_USER: ${{ secrets.USER_NAME }}
+          TARGET: ${{ secrets.DEPLOY_PATH }}
+
+      - name: SSH Prep for Production
+        uses: appleboy/ssh-action@v0.1.4
+        env:
+          IP: ${{ secrets.IP }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.TRAVIS_SSH_KEY }}
+          script: |
+            # Copy files to the server
+            rsync -aO --chown=www-data:www-data --fake-super --exclude={'.git','.env','storage/logs','storage/framework/cache/data'} --del ./ "$USER_NAME"@"$IP":"$DEPLOY_PATH"
+
+            # Install dependencies
+            cd "$DEPLOY_PATH"
+            composer install --no-progress --no-interaction --optimize-autoloader --no-dev
+            npm install
+
+            # Prep for production
+            npm run production
+            php artisan key:generate
+            ln -s "$DEPLOY_PATH"/storage/app/public "$DEPLOY_PATH"/public/storage
+            php artisan config:cache
+            php artisan route:cache
