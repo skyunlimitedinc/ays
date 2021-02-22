@@ -112,14 +112,12 @@ jobs:
           script_stop: true
           script: |
             # Install dependencies
-            cd "$DEPLOY_PATH"
-            pwd
-            composer install --no-progress --no-interaction --optimize-autoloader --no-dev
-            npm install
+            cd "$DEPLOY_PATH" && composer install --no-progress --no-interaction --optimize-autoloader --no-dev
+            cd "$DEPLOY_PATH" && npm install
 
             # Prep for production
-            npm run production
-            php artisan key:generate
-            ln -s "$DEPLOY_PATH"/storage/app/public "$DEPLOY_PATH"/public/storage
-            php artisan config:cache
-            php artisan route:cache
+            cd "$DEPLOY_PATH" && npm run production
+            cd "$DEPLOY_PATH" && php artisan key:generate
+            cd "$DEPLOY_PATH" && ln -s "$DEPLOY_PATH"/storage/app/public "$DEPLOY_PATH"/public/storage
+            cd "$DEPLOY_PATH" && php artisan config:cache
+            cd "$DEPLOY_PATH" && php artisan route:cache
