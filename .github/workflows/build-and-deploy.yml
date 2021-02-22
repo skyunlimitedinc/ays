@@ -80,7 +80,10 @@ jobs:
             -aO
             --chown=www-data:www-data
             --fake-super
-            --exclude={'.git','.env','storage/logs','storage/framework/cache/data'}
+            --exclude='.git'
+            --exclude='.env'
+            --exclude='storage/logs'
+            --exclude='storage/framework/cache/data'
             --del
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.IP }}
