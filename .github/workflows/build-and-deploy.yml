@@ -46,7 +46,8 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Decrypt Environment File
-        run: ./.github/scripts/decrypt_env.sh
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$ENV_PASSPHRASE" \
+          --output "$HOME/.env" "$HOME/.github/secrets/.env.gpg"
         env:
           ENV_PASSPHRASE: ${{ secrets.ENV_PASSPHRASE }}
 
