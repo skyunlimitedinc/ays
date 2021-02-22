@@ -85,7 +85,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.TRAVIS_SSH_KEY }}
           ARGS: >-
-            -rltD
+            -rltDO
             --chown=www-data:www-data
             --fake-super
             --exclude='.git'
