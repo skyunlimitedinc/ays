@@ -119,6 +119,6 @@ jobs:
             cd "$DEPLOY_PATH" && npm run production
             cd "$DEPLOY_PATH" && php artisan cache:clear
             cd "$DEPLOY_PATH" && php artisan key:generate
-            cd "$DEPLOY_PATH" && ln -s "$DEPLOY_PATH"/storage/app/public "$DEPLOY_PATH"/public/storage
+            cd "$DEPLOY_PATH" && ln -s "$DEPLOY_PATH/storage/app/public" "$DEPLOY_PATH/public/storage"
             cd "$DEPLOY_PATH" && php artisan config:cache
             cd "$DEPLOY_PATH" && php artisan route:cache
