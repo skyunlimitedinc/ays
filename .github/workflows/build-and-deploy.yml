@@ -112,6 +112,7 @@ jobs:
           script_stop: true
           script: |
             # Install dependencies
+            cd "$DEPLOY_PATH" && chmod -R g+w .
             cd "$DEPLOY_PATH" && composer install --no-progress --no-interaction --optimize-autoloader --no-dev
             cd "$DEPLOY_PATH" && npm install
 
