@@ -84,6 +84,8 @@ jobs:
             --exclude='storage/logs'
             --exclude='storage/framework/cache/data'
             --exclude='bootstrap/cache/*'
+            --exclude='node_modules/'
+            --exclude='vendor/'
             --del
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.IP }}
