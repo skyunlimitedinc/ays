@@ -57,20 +57,11 @@ jobs:
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
 
-      - name: Clear Views
-        run: php artisan view:clear
-
       - name: Generate Key
         run: php artisan key:generate
 
       - name: Link Storage
         run: php artisan storage:link
-
-      - name: Cache Config
-        run: php artisan config:cache
-
-      - name: Cache Routes
-        run: php artisan route:cache
 
       - name: Prepare SSH
         run: >
@@ -92,6 +83,7 @@ jobs:
             --exclude='.env'
             --exclude='storage/logs'
             --exclude='storage/framework/cache/data'
+            --exclude='bootstrap/cache/*'
             --del
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.IP }}
