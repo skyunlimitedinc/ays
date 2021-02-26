@@ -1,6 +1,6 @@
 # American Yacht Supply Web Site
 
-[![Build Status](https://travis-ci.org/skyunlimitedinc/ays.svg?branch=master)](https://travis-ci.org/skyunlimitedinc/ays)
+[![Build-and-Deploy](https://github.com/skyunlimitedinc/ays/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/skyunlimitedinc/ays/actions/workflows/build-and-deploy.yml)
 
 [American Yacht Supply][web] web site created with Laravel.
 
