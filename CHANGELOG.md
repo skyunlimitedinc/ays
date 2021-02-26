@@ -1,5 +1,52 @@
 # Changelog
 
+<a name="2020.11.0"></a>
+## 2020.11.0 (2021-02-26)
+
+### Added
+
+- ➕ Adds GPG to Docker image [[1aa59fa](https://github.com/skyunlimitedinc/ays/commit/1aa59fa6c6811ee609263b677645ea8ff15b1864)]
+
+### Changed
+
+- 🔧 Return to simple environment file copying for the Docker image [[2d11494](https://github.com/skyunlimitedinc/ays/commit/2d11494e14feb5924df3747f7c69c34f5c8c2d86)]
+- 🔧 Updates how the environment file is handled in Docker [[bb3d202](https://github.com/skyunlimitedinc/ays/commit/bb3d202e0ff3846b9f66e1d02efd630121584edc)]
+
+### Removed
+
+- 🔥 Removes Travis files [[072c6ed](https://github.com/skyunlimitedinc/ays/commit/072c6ed9c86672618a15008981d444bb4132f119)]
+
+### Fixed
+
+- 💚 Fixes the database password [[c45ceda](https://github.com/skyunlimitedinc/ays/commit/c45cedae50e753f01ab900066f509488365d9cab)]
+- 💚 More EXCLUSIONS [[9f76b34](https://github.com/skyunlimitedinc/ays/commit/9f76b341f8960704abb766f1a4651a27ffe0a4b1)]
+- 💚 Cache Fix [[59157f8](https://github.com/skyunlimitedinc/ays/commit/59157f8be57d17493e93436c3575af3c65b49b85)]
+- 💚 Group Write [[aa44b91](https://github.com/skyunlimitedinc/ays/commit/aa44b91901abf3c017cd070a43ec7342c068837d)]
+- 💚 Quotes [[5d39cbe](https://github.com/skyunlimitedinc/ays/commit/5d39cbed70362856314ad2daa4a32afa04c7772a)]
+- 💚 Clear Cache [[71a1182](https://github.com/skyunlimitedinc/ays/commit/71a1182d7834596b23f4d45cd0de1633a57a7b54)]
+- 💚 Permissions? [[f670537](https://github.com/skyunlimitedinc/ays/commit/f670537bf2b5e5a1e581a96e08dcdae72cd9e38d)]
+- 💚 Grasping at straws [[07d2a70](https://github.com/skyunlimitedinc/ays/commit/07d2a70635a6d808007f6823e9cf02236cc76ed7)]
+- 💚 DEPLOY_PATH [[906b22e](https://github.com/skyunlimitedinc/ays/commit/906b22e1bc0e3d1fb2506cd7b20b9943aa8ff9cf)]
+- 💚 Fixes final script [[446fe40](https://github.com/skyunlimitedinc/ays/commit/446fe40123842ca8f6fe2c40dc0f2622c6ee3450)]
+- 💚 One more option [[ff5d404](https://github.com/skyunlimitedinc/ays/commit/ff5d4044a1ae3c7390fe91e43b3a076da7496c82)]
+- 💚 Uses an alternate set of rsync options [[717d081](https://github.com/skyunlimitedinc/ays/commit/717d0819560b03d9e10cb767aad20e69f98de239)]
+- 💚 Tries fixing the SSH preparations [[83546ab](https://github.com/skyunlimitedinc/ays/commit/83546ab3a90c9a2b9ee3e9175288e6ab3784ae21)]
+- 💚 Adds remote host key [[8c00873](https://github.com/skyunlimitedinc/ays/commit/8c008737932b7f63416167e9be7decf3221a3ccf)]
+- 💚 Uses alternate exclusion args during rsync [[b2f65cb](https://github.com/skyunlimitedinc/ays/commit/b2f65cb9033aea6b4c23320cc8612462c439aa55)]
+- 💚 Changing (hopefully) the location of $HOME [[82570a3](https://github.com/skyunlimitedinc/ays/commit/82570a375f2e35c4f1736bf9e44c85d4ddc0ec3b)]
+- 💚 Another attempt to fix the gpg-ing [[aa361c0](https://github.com/skyunlimitedinc/ays/commit/aa361c060d0ffeddddcb10559d05971b376f4172)]
+- 💚 Alternate gpg decrypting method [[c5e06fe](https://github.com/skyunlimitedinc/ays/commit/c5e06feaa96c9c573ef9561f6ef4959405980964)]
+- 🐛 Fixes the Dockerfile's `gpg` command [[48f703d](https://github.com/skyunlimitedinc/ays/commit/48f703d1f175285a99c1a3b5cb766f4a4eac653e)]
+
+### Miscellaneous
+
+-  👷 Changes CI trigger to `main` branch only [[1fdb013](https://github.com/skyunlimitedinc/ays/commit/1fdb0138859111ac22771ce9d5cb1d57b981f21b)]
+-  👷 Tries using the official 'storage:link' artisan command [[46601a1](https://github.com/skyunlimitedinc/ays/commit/46601a148e571d96b6a58945d455231a4a5eb300)]
+-  👷 Simplifies deployment script [[9d732ba](https://github.com/skyunlimitedinc/ays/commit/9d732bac94d85355acf509db67a72085712a5e36)]
+- 📝 Changes badge from Travis to GH Action [[5aaaddc](https://github.com/skyunlimitedinc/ays/commit/5aaaddce85a643d3565eb9ed33fbe4648158b252)]
+-  👷 First attempt at Github Action to build and deploy [[408a53e](https://github.com/skyunlimitedinc/ays/commit/408a53e2c6afa1bace4d44d1e4186d4e3bfcac89)]
+
+
 <a name="2020.10.2"></a>
 ## 2020.10.2 (2021-02-18)
 

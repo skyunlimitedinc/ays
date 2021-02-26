@@ -1,7 +1,7 @@
 {
   "name": "ays",
   "description": "[![Build Status](https://travis-ci.org/skyunlimitedinc/ays.svg?branch=main)](https://travis-ci.org/skyunlimitedinc/ays)",
-  "version": "2020.10.2",
+  "version": "2020.11.0",
   "main": "webpack.mix.js",
   "directories": {
     "test": "tests"
