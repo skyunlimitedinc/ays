@@ -115,6 +115,6 @@ jobs:
             npm run production
             php artisan cache:clear
             php artisan key:generate
-            ln -s "$DEPLOY_PATH/storage/app/public" "$DEPLOY_PATH/public/storage"
+            php artisan storage:link
             php artisan config:cache
             php artisan route:cache
