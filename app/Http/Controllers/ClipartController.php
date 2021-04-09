@@ -20,7 +20,7 @@ class ClipartController extends Controller
     {
         // Get the Model for the given subcategory id.
         $clipartSubcategory = Cache::remember(
-            'clipart:subcategory',
+            "clipart:{$subcategory}",
             new DateInterval('P1M'),
             function () use ($subcategory) {
                 return ClipartSubcategory::with('clipartCategory')->find(
