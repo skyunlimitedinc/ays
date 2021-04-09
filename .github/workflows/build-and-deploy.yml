@@ -73,7 +73,7 @@ jobs:
           IP: ${{ secrets.IP }}
 
       - name: SSH Deploy
-        uses: easingthemes/ssh-deploy@v2.1.5
+        uses: easingthemes/ssh-deploy@v2.1.6
         env:
           SSH_PRIVATE_KEY: ${{ secrets.TRAVIS_SSH_KEY }}
           ARGS: >-
