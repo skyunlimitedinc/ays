@@ -1,5 +1,22 @@
 # Changelog
 
+<a name="2020.11.1"></a>
+## 2020.11.1 (2021-04-09)
+
+### Changed
+
+- ⬆️ Updates `ssh-deploy` to v2.1.6 [[cd78482](https://github.com/skyunlimitedinc/ays/commit/cd78482a393c6b082b15940493536777272c2314)]
+
+### Fixed
+
+- 🐛 Fixes caching the clip art subcategories [[479bd58](https://github.com/skyunlimitedinc/ays/commit/479bd582b439e5781be81af8c3ef874540ab1bbb)]
+
+### Miscellaneous
+
+-  Bump axios from 0.18.1 to 0.21.1 [[b365a1d](https://github.com/skyunlimitedinc/ays/commit/b365a1d5f237818385e11909d6b1a81436ec8a1c)]
+-  Merge pull request [#9](https://github.com/skyunlimitedinc/ays/issues/9) from skyunlimitedinc/dependabot/npm_and_yarn/axios-0.21.1 [[1f9d170](https://github.com/skyunlimitedinc/ays/commit/1f9d1701da9dfd7df2cb4adeb9a387c2b501f3c1)]
+
+
 <a name="2020.11.0"></a>
 ## 2020.11.0 (2021-02-26)
 
