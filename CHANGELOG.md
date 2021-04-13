@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="2020.11.2"></a>
+## 2020.11.2 (2021-04-13)
+
+### Fixed
+
+- 💚 Removes `--chown` argument during rsync [[6ec6262](https://github.com/skyunlimitedinc/ays/commit/6ec6262003824e385ed0dd83c8241f9a2de4e086)]
+
+### Miscellaneous
+
+-  👷 Changes user for CI [[2259913](https://github.com/skyunlimitedinc/ays/commit/2259913fda125a478de6b515763755887f5fec1f)]
+
+
 <a name="2020.11.1"></a>
 ## 2020.11.1 (2021-04-09)
 
