@@ -75,7 +75,7 @@ jobs:
       - name: SSH Deploy
         uses: easingthemes/ssh-deploy@v2.1.6
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.TRAVIS_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
           ARGS: >-
             -rptgoDO
             --fake-super
@@ -101,7 +101,7 @@ jobs:
         with:
           host: ${{ secrets.IP }}
           username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.TRAVIS_SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           envs: IP,USER_NAME,DEPLOY_PATH
           script_stop: true
           script: |
