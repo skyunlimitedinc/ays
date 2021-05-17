@@ -5,13 +5,13 @@
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3326</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3326/sky</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="acsays-db@skyubuntu" uuid="ef1468b4-8ea3-412c-8adb-03c69f47ae0d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.1.71:3326</jdbc-url>
+      <jdbc-url>jdbc:mysql://192.168.1.71:3326/sky</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="plesk@sky" uuid="d84d2771-2531-4080-8aba-326e96f7351b">
       <driver-ref>mariadb</driver-ref>
@@ -35,7 +35,7 @@
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://db-acsays-do-user-7427434-0.b.db.ondigitalocean.com:25060</jdbc-url>
+      <jdbc-url>jdbc:mysql://db-acsays-do-user-7427434-0.b.db.ondigitalocean.com:25060/sky</jdbc-url>
     </data-source>
   </component>
 </project>
