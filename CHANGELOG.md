@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="2020.11.3"></a>
+## 2020.11.3 (2021-05-17)
+
+### Changed
+
+- 🔧 IDE updates [[9763395](https://github.com/skyunlimitedinc/ays/commit/97633952cd3b6516f8b69a7e94fece6536ac9d46)]
+
+### Removed
+
+- 🔥 Removes example `.env` file [[db6f169](https://github.com/skyunlimitedinc/ays/commit/db6f1698402e4fa47b8d0a2207f9e49be011b9d5)]
+
+
 <a name="2020.11.2"></a>
 ## 2020.11.2 (2021-04-13)
 
