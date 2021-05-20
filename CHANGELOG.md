@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2020.11.5"></a>
+## 2020.11.5 (2021-05-20)
+
+### Removed
+
+- 🔥 Removes old Travis scripts [[ae13c90](https://github.com/skyunlimitedinc/ays/commit/ae13c9043fd8dca9c6e40624cd2025698f87b901)]
+
+
 <a name="2020.11.4"></a>
 ## 2020.11.4 (2021-05-20)
 
