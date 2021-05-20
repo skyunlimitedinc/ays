@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
       nodejs \
       build-essential \
       gnupg \
+      exiftool \
     && rm -r /var/lib/apt/lists/* \
     && docker-php-ext-configure pdo_mysql \
       --with-pdo-mysql=mysqlnd \
@@ -41,6 +42,7 @@ RUN apt-get update && apt-get install -y \
       --enable-gd \
       --with-freetype=/usr/include/ \
       --with-jpeg=/usr/include/ \
+    && docker-php-ext-configure exif \
     && docker-php-ext-install \
       intl \
       pcntl \
@@ -50,6 +52,8 @@ RUN apt-get update && apt-get install -y \
       zip \
       opcache \
       gd \
+      exif \
+    && docker-php-ext-enable exif \
     && pecl install -o -f redis \
     && rm -rf /tmp/pear \
     && docker-php-ext-enable redis
