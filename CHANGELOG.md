@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="2020.11.6"></a>
+## 2020.11.6 (2021-05-20)
+
+### Added
+
+- ➕ Adds PHP exif capability to Docker image [[a7bf83e](https://github.com/skyunlimitedinc/ays/commit/a7bf83e2815c8b0f3d0db59594da085d9e6e8efc)]
+
+### Changed
+
+- 🍱 Updates profile picture [[c520202](https://github.com/skyunlimitedinc/ays/commit/c520202204a9e0f1149670dadb38a6d35b58a0ec)]
+
+
 <a name="2020.11.5"></a>
 ## 2020.11.5 (2021-05-20)
 
