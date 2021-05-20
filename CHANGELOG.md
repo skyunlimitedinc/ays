@@ -1,5 +1,24 @@
 # Changelog
 
+<a name="2020.11.4"></a>
+## 2020.11.4 (2021-05-20)
+
+### Changed
+
+- 🚚 Updates Dockerfile to account for renamed `.env` files [[f1e2d77](https://github.com/skyunlimitedinc/ays/commit/f1e2d77ffe9cd0cffbda0c786558c04f390a8c4b)]
+- ⬆️ Updates Node dependencies [[003a3a1](https://github.com/skyunlimitedinc/ays/commit/003a3a1a513783051b192f8d88d5f2ed16976bba)]
+- ⬆️ Updates Composer dependencies [[48e20e1](https://github.com/skyunlimitedinc/ays/commit/48e20e1322432dc719879882423d928cd0c2c6aa)]
+
+### Security
+
+- 🔒 Re-encodes environment file with new MySQL password [[c822f4b](https://github.com/skyunlimitedinc/ays/commit/c822f4b873c6fae81b98b7b24b34a708b94fb3b0)]
+- 🔒 See some secrets [[807ddbe](https://github.com/skyunlimitedinc/ays/commit/807ddbe9787ec1594d7d4daec7b3132a5d287d30)]
+
+### Miscellaneous
+
+- 🔨 Prevents parameter expansion [[bb22a32](https://github.com/skyunlimitedinc/ays/commit/bb22a32862d44815e444c1323bbc3ad1a68a3c54)]
+
+
 <a name="2020.11.3"></a>
 ## 2020.11.3 (2021-05-17)
 
